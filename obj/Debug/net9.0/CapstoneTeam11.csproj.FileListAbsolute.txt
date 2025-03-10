@@ -95,3 +95,4 @@
 /Users/eksha/Documents/capstone/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.pdb
 /Users/eksha/Documents/capstone/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.genruntimeconfig.cache
 /Users/eksha/Documents/capstone/CapstoneTeam11/obj/Debug/net9.0/ref/CapstoneTeam11.dll
+/Users/eksha/Documents/capstone/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.sourcelink.json
