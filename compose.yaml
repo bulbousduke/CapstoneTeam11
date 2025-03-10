@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  web:
+    image: capstoneteam11
+    build: .
+    ports:
+      - 5001:8080
