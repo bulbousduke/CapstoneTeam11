@@ -1,28 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/eksha/Documents/capstone/CapstoneTeam11/CapstoneTeam11.csproj": {}
+    "C:\\Users\\Zach\\Capstone\\New folder\\CapstoneTeam11.csproj": {}
   },
   "projects": {
-    "/Users/eksha/Documents/capstone/CapstoneTeam11/CapstoneTeam11.csproj": {
+    "C:\\Users\\Zach\\Capstone\\New folder\\CapstoneTeam11.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/eksha/Documents/capstone/CapstoneTeam11/CapstoneTeam11.csproj",
+        "projectUniqueName": "C:\\Users\\Zach\\Capstone\\New folder\\CapstoneTeam11.csproj",
         "projectName": "CapstoneTeam11",
-        "projectPath": "/Users/eksha/Documents/capstone/CapstoneTeam11/CapstoneTeam11.csproj",
-        "packagesPath": "/Users/eksha/.nuget/packages/",
-        "outputPath": "/Users/eksha/Documents/capstone/CapstoneTeam11/obj/",
+        "projectPath": "C:\\Users\\Zach\\Capstone\\New folder\\CapstoneTeam11.csproj",
+        "packagesPath": "C:\\Users\\Zach\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Zach\\Capstone\\New folder\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "/Users/eksha/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Zach\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -65,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
