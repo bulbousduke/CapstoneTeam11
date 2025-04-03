@@ -47,6 +47,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "MongoDB.BSon": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[3.3.0, )"
