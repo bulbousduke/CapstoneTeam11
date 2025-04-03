@@ -96,3 +96,12 @@
 /Users/eksha/Documents/capstone/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.genruntimeconfig.cache
 /Users/eksha/Documents/capstone/CapstoneTeam11/obj/Debug/net9.0/ref/CapstoneTeam11.dll
 /Users/eksha/Documents/capstone/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.sourcelink.json
+/Users/eksha/Documents/capstone/CapstoneTeam11/bin/Debug/net9.0/global.json
+/Users/eksha/Documents/capstone/CapstoneTeam11/bin/Debug/net9.0/DnsClient.dll
+/Users/eksha/Documents/capstone/CapstoneTeam11/bin/Debug/net9.0/MongoDB.Bson.dll
+/Users/eksha/Documents/capstone/CapstoneTeam11/bin/Debug/net9.0/MongoDB.Driver.dll
+/Users/eksha/Documents/capstone/CapstoneTeam11/bin/Debug/net9.0/SharpCompress.dll
+/Users/eksha/Documents/capstone/CapstoneTeam11/bin/Debug/net9.0/Snappier.dll
+/Users/eksha/Documents/capstone/CapstoneTeam11/bin/Debug/net9.0/ZstdSharp.dll
+/Users/eksha/Documents/capstone/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.csproj.AssemblyReference.cache
+/Users/eksha/Documents/capstone/CapstoneTeam11/obj/Debug/net9.0/Capstone.3EA6B901.Up2Date
