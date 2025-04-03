@@ -96,202 +96,301 @@
 /Users/eksha/Documents/capstone/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.genruntimeconfig.cache
 /Users/eksha/Documents/capstone/CapstoneTeam11/obj/Debug/net9.0/ref/CapstoneTeam11.dll
 /Users/eksha/Documents/capstone/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.sourcelink.json
-C:\Users\Zach\Capstone\New folder\bin\Debug\net9.0\appsettings.Development.json
-C:\Users\Zach\Capstone\New folder\bin\Debug\net9.0\appsettings.json
-C:\Users\Zach\Capstone\New folder\bin\Debug\net9.0\global.json
-C:\Users\Zach\Capstone\New folder\bin\Debug\net9.0\CapstoneTeam11.staticwebassets.runtime.json
-C:\Users\Zach\Capstone\New folder\bin\Debug\net9.0\CapstoneTeam11.staticwebassets.endpoints.json
-C:\Users\Zach\Capstone\New folder\bin\Debug\net9.0\CapstoneTeam11.exe
-C:\Users\Zach\Capstone\New folder\bin\Debug\net9.0\CapstoneTeam11.deps.json
-C:\Users\Zach\Capstone\New folder\bin\Debug\net9.0\CapstoneTeam11.runtimeconfig.json
-C:\Users\Zach\Capstone\New folder\bin\Debug\net9.0\CapstoneTeam11.dll
-C:\Users\Zach\Capstone\New folder\bin\Debug\net9.0\CapstoneTeam11.pdb
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\CapstoneTeam11.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\CapstoneTeam11.AssemblyInfoInputs.cache
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\CapstoneTeam11.AssemblyInfo.cs
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\CapstoneTeam11.csproj.CoreCompileInputs.cache
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\CapstoneTeam11.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\CapstoneTeam11.RazorAssemblyInfo.cache
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\CapstoneTeam11.RazorAssemblyInfo.cs
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\CapstoneTeam11.sourcelink.json
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\scopedcss\bundle\CapstoneTeam11.styles.css
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\scopedcss\projectbundle\CapstoneTeam11.bundle.scp.css
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\akknosxc4z-61n19gt1b8.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\p67hn9hv2u-xtxxf3hu2r.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\fq50j98i1g-t1cqhe9u97.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\i5ph6bt6fn-c2jlpeoesf.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\gq0oyw2eyg-sejl45xvog.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\naqx3zca4x-aexeepp0ev.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\ax3g1w5ztq-xvp3kq03qx.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\tv0abh8tlg-ausgxo2sd3.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\v9kf200h6a-22vffe00uq.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\bdseceewx0-cosvhxvwiu.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\nq4vb1szd8-qesaa3a1fm.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\l4krapc20w-fvhpjtyr6v.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\awb42y0lcw-tmc1g35s3z.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\zaw97vbgdz-fsbi9cje9m.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\o5q7vra097-rxsg74s51o.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\d64b9ov2dg-ee0r1s7dh0.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\zjaonh6l8b-q9ht133ko3.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\n36ludxtd9-jd9uben2k1.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\1ha0s6m0u9-gye83jo8yx.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\4fkivcoe8i-r4e9w2rdcm.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\gebie8v6ay-wl58j5mj3v.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\ugqr9lq3gk-c2oey78nd0.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\8cnnwlzw3c-d4r6k3f320.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\3ujiog0k0d-j5mq2jizvt.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\n5upyw7m5y-keugtjm085.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\8u4mtfov94-nvvlpmu67g.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\4r045qv7w1-zub09dkrxp.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\gg475mfzkx-pj5nd1wqec.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\uuwqfxlres-43atpzeawx.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\1hnpaw1j3r-v0zj4ognzu.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\auyd0iu9gi-ynyaa8k90p.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\als9d9rmrt-hrwsygsryq.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\ucivhfz7r3-c63t5i9ira.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\s8i3gpfsgm-ft3s53vfgj.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\zp0c3rebn5-4094rpi4f9.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\kctuafiu90-6pdc2jztkx.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\8sohzg4c8r-hd3gran6i8.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\2j4ynfgir3-iovd86k7lj.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\zfjtt1sfm5-ltid2c489k.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\hrje9xoz7h-kbrnm935zg.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\6eao21794r-8vyfqsqgz1.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\1bx7n1xulh-y7v9cxd14o.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\xm8hcb1nbu-u9q1upor1n.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\ok3o0inliy-h1s4sie4z3.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\sqws9nnen5-4d85u1mtcx.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\p8i7ec3jwz-0j3bgjxly4.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\mmigiw95t1-03hjc8e09r.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\gihbydxbq3-48y08845bh.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\m2ic3onczu-356vix0kms.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\adc3y8va19-83jwlth58m.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\6uh3fhtcfr-mrlpezrjn3.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\9cn6kbloyk-worgj0nhwm.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\b0lt691o6s-gk0pw8i4co.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\7ibisuh8mv-x0q3zqp4vz.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\0hvo3e5inn-d6nrnj6jjx.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\pa9gvbjbkf-m9qm4tazc0.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\e6yzcolmlh-ttgo8qnofa.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\7yfne2405b-jjsuc0puko.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\qg4xb2vm7p-9vr69e8ynj.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\gnoa3wuxeg-87fc7y1x7t.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\p0sazcmwu4-mlv21k5csn.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\lke9m0l3rn-a7bbg82m3h.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\8v2ji8a7lt-a7bbg82m3h.gz
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\staticwebassets.build.json
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\staticwebassets.development.json
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\staticwebassets\msbuild.CapstoneTeam11.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\staticwebassets\msbuild.CapstoneTeam11.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\staticwebassets\msbuild.build.CapstoneTeam11.props
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.CapstoneTeam11.props
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.CapstoneTeam11.props
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\staticwebassets.pack.json
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\CapstoneTeam11.dll
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\refint\CapstoneTeam11.dll
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\CapstoneTeam11.pdb
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\CapstoneTeam11.genruntimeconfig.cache
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\ref\CapstoneTeam11.dll
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
-C:\Users\Zach\Capstone\New folder\obj\Debug\net9.0\compressed\ma1yf4065g-jycz3gys49.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\bin\Debug\net9.0\appsettings.Development.json
-C:\Users\Zach\Capstone\CaptsoneTeam11\bin\Debug\net9.0\appsettings.json
-C:\Users\Zach\Capstone\CaptsoneTeam11\bin\Debug\net9.0\global.json
-C:\Users\Zach\Capstone\CaptsoneTeam11\bin\Debug\net9.0\CapstoneTeam11.staticwebassets.runtime.json
-C:\Users\Zach\Capstone\CaptsoneTeam11\bin\Debug\net9.0\CapstoneTeam11.staticwebassets.endpoints.json
-C:\Users\Zach\Capstone\CaptsoneTeam11\bin\Debug\net9.0\CapstoneTeam11.exe
-C:\Users\Zach\Capstone\CaptsoneTeam11\bin\Debug\net9.0\CapstoneTeam11.deps.json
-C:\Users\Zach\Capstone\CaptsoneTeam11\bin\Debug\net9.0\CapstoneTeam11.runtimeconfig.json
-C:\Users\Zach\Capstone\CaptsoneTeam11\bin\Debug\net9.0\CapstoneTeam11.dll
-C:\Users\Zach\Capstone\CaptsoneTeam11\bin\Debug\net9.0\CapstoneTeam11.pdb
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\CapstoneTeam11.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\CapstoneTeam11.AssemblyInfoInputs.cache
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\CapstoneTeam11.AssemblyInfo.cs
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\CapstoneTeam11.csproj.CoreCompileInputs.cache
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\CapstoneTeam11.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\CapstoneTeam11.RazorAssemblyInfo.cache
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\CapstoneTeam11.RazorAssemblyInfo.cs
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\CapstoneTeam11.sourcelink.json
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\scopedcss\bundle\CapstoneTeam11.styles.css
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\scopedcss\projectbundle\CapstoneTeam11.bundle.scp.css
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\akknosxc4z-61n19gt1b8.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\p67hn9hv2u-xtxxf3hu2r.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\fq50j98i1g-t1cqhe9u97.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\i5ph6bt6fn-c2jlpeoesf.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\gq0oyw2eyg-sejl45xvog.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\naqx3zca4x-aexeepp0ev.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\ax3g1w5ztq-xvp3kq03qx.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\tv0abh8tlg-ausgxo2sd3.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\v9kf200h6a-22vffe00uq.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\bdseceewx0-cosvhxvwiu.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\nq4vb1szd8-qesaa3a1fm.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\l4krapc20w-fvhpjtyr6v.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\awb42y0lcw-tmc1g35s3z.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\zaw97vbgdz-fsbi9cje9m.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\o5q7vra097-rxsg74s51o.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\d64b9ov2dg-ee0r1s7dh0.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\zjaonh6l8b-q9ht133ko3.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\n36ludxtd9-jd9uben2k1.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\1ha0s6m0u9-gye83jo8yx.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\4fkivcoe8i-r4e9w2rdcm.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\gebie8v6ay-wl58j5mj3v.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\ugqr9lq3gk-c2oey78nd0.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\8cnnwlzw3c-d4r6k3f320.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\3ujiog0k0d-j5mq2jizvt.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\n5upyw7m5y-keugtjm085.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\8u4mtfov94-nvvlpmu67g.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\4r045qv7w1-zub09dkrxp.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\gg475mfzkx-pj5nd1wqec.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\uuwqfxlres-43atpzeawx.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\1hnpaw1j3r-v0zj4ognzu.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\auyd0iu9gi-ynyaa8k90p.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\als9d9rmrt-hrwsygsryq.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\ucivhfz7r3-c63t5i9ira.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\s8i3gpfsgm-ft3s53vfgj.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\zp0c3rebn5-4094rpi4f9.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\kctuafiu90-6pdc2jztkx.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\8sohzg4c8r-hd3gran6i8.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\2j4ynfgir3-iovd86k7lj.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\zfjtt1sfm5-ltid2c489k.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\hrje9xoz7h-kbrnm935zg.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\6eao21794r-8vyfqsqgz1.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\1bx7n1xulh-y7v9cxd14o.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\xm8hcb1nbu-u9q1upor1n.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\ok3o0inliy-h1s4sie4z3.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\sqws9nnen5-4d85u1mtcx.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\p8i7ec3jwz-0j3bgjxly4.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\mmigiw95t1-03hjc8e09r.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\gihbydxbq3-48y08845bh.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\m2ic3onczu-356vix0kms.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\adc3y8va19-83jwlth58m.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\6uh3fhtcfr-mrlpezrjn3.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\9cn6kbloyk-worgj0nhwm.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\b0lt691o6s-gk0pw8i4co.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\7ibisuh8mv-x0q3zqp4vz.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\0hvo3e5inn-d6nrnj6jjx.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\pa9gvbjbkf-m9qm4tazc0.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\e6yzcolmlh-ttgo8qnofa.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\7yfne2405b-jjsuc0puko.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\qg4xb2vm7p-9vr69e8ynj.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\gnoa3wuxeg-87fc7y1x7t.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\p0sazcmwu4-mlv21k5csn.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\lke9m0l3rn-a7bbg82m3h.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\8v2ji8a7lt-a7bbg82m3h.gz
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\staticwebassets.build.json
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\staticwebassets.development.json
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\staticwebassets\msbuild.CapstoneTeam11.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\staticwebassets\msbuild.CapstoneTeam11.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\staticwebassets\msbuild.build.CapstoneTeam11.props
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.CapstoneTeam11.props
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.CapstoneTeam11.props
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\staticwebassets.pack.json
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\CapstoneTeam11.dll
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\refint\CapstoneTeam11.dll
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\CapstoneTeam11.pdb
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\CapstoneTeam11.genruntimeconfig.cache
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\ref\CapstoneTeam11.dll
-C:\Users\Zach\Capstone\CaptsoneTeam11\obj\Debug\net9.0\compressed\ma1yf4065g-xn1w4c9s7l.gz
+C:/Users/Zach/Capstone/New folder/bin/Debug/net9.0/appsettings.Development.json
+C:/Users/Zach/Capstone/New folder/bin/Debug/net9.0/appsettings.json
+C:/Users/Zach/Capstone/New folder/bin/Debug/net9.0/global.json
+C:/Users/Zach/Capstone/New folder/bin/Debug/net9.0/CapstoneTeam11.staticwebassets.runtime.json
+C:/Users/Zach/Capstone/New folder/bin/Debug/net9.0/CapstoneTeam11.staticwebassets.endpoints.json
+C:/Users/Zach/Capstone/New folder/bin/Debug/net9.0/CapstoneTeam11.exe
+C:/Users/Zach/Capstone/New folder/bin/Debug/net9.0/CapstoneTeam11.deps.json
+C:/Users/Zach/Capstone/New folder/bin/Debug/net9.0/CapstoneTeam11.runtimeconfig.json
+C:/Users/Zach/Capstone/New folder/bin/Debug/net9.0/CapstoneTeam11.dll
+C:/Users/Zach/Capstone/New folder/bin/Debug/net9.0/CapstoneTeam11.pdb
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/CapstoneTeam11.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/CapstoneTeam11.AssemblyInfoInputs.cache
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/CapstoneTeam11.AssemblyInfo.cs
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/CapstoneTeam11.csproj.CoreCompileInputs.cache
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/CapstoneTeam11.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/CapstoneTeam11.RazorAssemblyInfo.cache
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/CapstoneTeam11.RazorAssemblyInfo.cs
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/CapstoneTeam11.sourcelink.json
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/scopedcss/bundle/CapstoneTeam11.styles.css
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/scopedcss/projectbundle/CapstoneTeam11.bundle.scp.css
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/akknosxc4z-61n19gt1b8.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/p67hn9hv2u-xtxxf3hu2r.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/fq50j98i1g-t1cqhe9u97.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/i5ph6bt6fn-c2jlpeoesf.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/gq0oyw2eyg-sejl45xvog.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/naqx3zca4x-aexeepp0ev.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/ax3g1w5ztq-xvp3kq03qx.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/tv0abh8tlg-ausgxo2sd3.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/v9kf200h6a-22vffe00uq.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/bdseceewx0-cosvhxvwiu.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/nq4vb1szd8-qesaa3a1fm.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/l4krapc20w-fvhpjtyr6v.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/awb42y0lcw-tmc1g35s3z.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/zaw97vbgdz-fsbi9cje9m.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/o5q7vra097-rxsg74s51o.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/d64b9ov2dg-ee0r1s7dh0.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/zjaonh6l8b-q9ht133ko3.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/n36ludxtd9-jd9uben2k1.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/1ha0s6m0u9-gye83jo8yx.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/4fkivcoe8i-r4e9w2rdcm.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/gebie8v6ay-wl58j5mj3v.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/ugqr9lq3gk-c2oey78nd0.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/8cnnwlzw3c-d4r6k3f320.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/3ujiog0k0d-j5mq2jizvt.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/n5upyw7m5y-keugtjm085.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/8u4mtfov94-nvvlpmu67g.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/4r045qv7w1-zub09dkrxp.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/gg475mfzkx-pj5nd1wqec.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/uuwqfxlres-43atpzeawx.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/1hnpaw1j3r-v0zj4ognzu.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/auyd0iu9gi-ynyaa8k90p.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/als9d9rmrt-hrwsygsryq.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/ucivhfz7r3-c63t5i9ira.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/s8i3gpfsgm-ft3s53vfgj.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/zp0c3rebn5-4094rpi4f9.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/kctuafiu90-6pdc2jztkx.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/8sohzg4c8r-hd3gran6i8.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/2j4ynfgir3-iovd86k7lj.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/zfjtt1sfm5-ltid2c489k.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/hrje9xoz7h-kbrnm935zg.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/6eao21794r-8vyfqsqgz1.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/1bx7n1xulh-y7v9cxd14o.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/xm8hcb1nbu-u9q1upor1n.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/ok3o0inliy-h1s4sie4z3.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/sqws9nnen5-4d85u1mtcx.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/p8i7ec3jwz-0j3bgjxly4.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/mmigiw95t1-03hjc8e09r.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/gihbydxbq3-48y08845bh.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/m2ic3onczu-356vix0kms.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/adc3y8va19-83jwlth58m.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/6uh3fhtcfr-mrlpezrjn3.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/9cn6kbloyk-worgj0nhwm.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/b0lt691o6s-gk0pw8i4co.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/7ibisuh8mv-x0q3zqp4vz.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/0hvo3e5inn-d6nrnj6jjx.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/pa9gvbjbkf-m9qm4tazc0.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/e6yzcolmlh-ttgo8qnofa.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/7yfne2405b-jjsuc0puko.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/qg4xb2vm7p-9vr69e8ynj.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/gnoa3wuxeg-87fc7y1x7t.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/p0sazcmwu4-mlv21k5csn.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/lke9m0l3rn-a7bbg82m3h.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/8v2ji8a7lt-a7bbg82m3h.gz
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/staticwebassets.build.json
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/staticwebassets.development.json
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/staticwebassets.build.endpoints.json
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/staticwebassets/msbuild.CapstoneTeam11.Microsoft.AspNetCore.StaticWebAssets.props
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/staticwebassets/msbuild.CapstoneTeam11.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/staticwebassets/msbuild.build.CapstoneTeam11.props
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.CapstoneTeam11.props
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.CapstoneTeam11.props
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/staticwebassets.pack.json
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/CapstoneTeam11.dll
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/refint/CapstoneTeam11.dll
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/CapstoneTeam11.pdb
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/CapstoneTeam11.genruntimeconfig.cache
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/ref/CapstoneTeam11.dll
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/staticwebassets.upToDateCheck.txt
+C:/Users/Zach/Capstone/New folder/obj/Debug/net9.0/compressed/ma1yf4065g-jycz3gys49.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/bin/Debug/net9.0/appsettings.Development.json
+C:/Users/Zach/Capstone/CaptsoneTeam11/bin/Debug/net9.0/appsettings.json
+C:/Users/Zach/Capstone/CaptsoneTeam11/bin/Debug/net9.0/global.json
+C:/Users/Zach/Capstone/CaptsoneTeam11/bin/Debug/net9.0/CapstoneTeam11.staticwebassets.runtime.json
+C:/Users/Zach/Capstone/CaptsoneTeam11/bin/Debug/net9.0/CapstoneTeam11.staticwebassets.endpoints.json
+C:/Users/Zach/Capstone/CaptsoneTeam11/bin/Debug/net9.0/CapstoneTeam11.exe
+C:/Users/Zach/Capstone/CaptsoneTeam11/bin/Debug/net9.0/CapstoneTeam11.deps.json
+C:/Users/Zach/Capstone/CaptsoneTeam11/bin/Debug/net9.0/CapstoneTeam11.runtimeconfig.json
+C:/Users/Zach/Capstone/CaptsoneTeam11/bin/Debug/net9.0/CapstoneTeam11.dll
+C:/Users/Zach/Capstone/CaptsoneTeam11/bin/Debug/net9.0/CapstoneTeam11.pdb
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/CapstoneTeam11.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/CapstoneTeam11.AssemblyInfoInputs.cache
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/CapstoneTeam11.AssemblyInfo.cs
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/CapstoneTeam11.csproj.CoreCompileInputs.cache
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/CapstoneTeam11.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/CapstoneTeam11.RazorAssemblyInfo.cache
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/CapstoneTeam11.RazorAssemblyInfo.cs
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/CapstoneTeam11.sourcelink.json
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/scopedcss/bundle/CapstoneTeam11.styles.css
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/scopedcss/projectbundle/CapstoneTeam11.bundle.scp.css
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/akknosxc4z-61n19gt1b8.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/p67hn9hv2u-xtxxf3hu2r.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/fq50j98i1g-t1cqhe9u97.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/i5ph6bt6fn-c2jlpeoesf.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/gq0oyw2eyg-sejl45xvog.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/naqx3zca4x-aexeepp0ev.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/ax3g1w5ztq-xvp3kq03qx.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/tv0abh8tlg-ausgxo2sd3.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/v9kf200h6a-22vffe00uq.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/bdseceewx0-cosvhxvwiu.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/nq4vb1szd8-qesaa3a1fm.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/l4krapc20w-fvhpjtyr6v.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/awb42y0lcw-tmc1g35s3z.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/zaw97vbgdz-fsbi9cje9m.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/o5q7vra097-rxsg74s51o.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/d64b9ov2dg-ee0r1s7dh0.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/zjaonh6l8b-q9ht133ko3.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/n36ludxtd9-jd9uben2k1.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/1ha0s6m0u9-gye83jo8yx.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/4fkivcoe8i-r4e9w2rdcm.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/gebie8v6ay-wl58j5mj3v.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/ugqr9lq3gk-c2oey78nd0.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/8cnnwlzw3c-d4r6k3f320.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/3ujiog0k0d-j5mq2jizvt.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/n5upyw7m5y-keugtjm085.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/8u4mtfov94-nvvlpmu67g.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/4r045qv7w1-zub09dkrxp.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/gg475mfzkx-pj5nd1wqec.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/uuwqfxlres-43atpzeawx.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/1hnpaw1j3r-v0zj4ognzu.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/auyd0iu9gi-ynyaa8k90p.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/als9d9rmrt-hrwsygsryq.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/ucivhfz7r3-c63t5i9ira.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/s8i3gpfsgm-ft3s53vfgj.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/zp0c3rebn5-4094rpi4f9.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/kctuafiu90-6pdc2jztkx.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/8sohzg4c8r-hd3gran6i8.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/2j4ynfgir3-iovd86k7lj.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/zfjtt1sfm5-ltid2c489k.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/hrje9xoz7h-kbrnm935zg.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/6eao21794r-8vyfqsqgz1.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/1bx7n1xulh-y7v9cxd14o.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/xm8hcb1nbu-u9q1upor1n.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/ok3o0inliy-h1s4sie4z3.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/sqws9nnen5-4d85u1mtcx.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/p8i7ec3jwz-0j3bgjxly4.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/mmigiw95t1-03hjc8e09r.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/gihbydxbq3-48y08845bh.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/m2ic3onczu-356vix0kms.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/adc3y8va19-83jwlth58m.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/6uh3fhtcfr-mrlpezrjn3.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/9cn6kbloyk-worgj0nhwm.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/b0lt691o6s-gk0pw8i4co.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/7ibisuh8mv-x0q3zqp4vz.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/0hvo3e5inn-d6nrnj6jjx.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/pa9gvbjbkf-m9qm4tazc0.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/e6yzcolmlh-ttgo8qnofa.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/7yfne2405b-jjsuc0puko.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/qg4xb2vm7p-9vr69e8ynj.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/gnoa3wuxeg-87fc7y1x7t.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/p0sazcmwu4-mlv21k5csn.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/lke9m0l3rn-a7bbg82m3h.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/8v2ji8a7lt-a7bbg82m3h.gz
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/staticwebassets.build.json
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/staticwebassets.development.json
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/staticwebassets.build.endpoints.json
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/staticwebassets/msbuild.CapstoneTeam11.Microsoft.AspNetCore.StaticWebAssets.props
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/staticwebassets/msbuild.CapstoneTeam11.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/staticwebassets/msbuild.build.CapstoneTeam11.props
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.CapstoneTeam11.props
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.CapstoneTeam11.props
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/staticwebassets.pack.json
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/CapstoneTeam11.dll
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/refint/CapstoneTeam11.dll
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/CapstoneTeam11.pdb
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/CapstoneTeam11.genruntimeconfig.cache
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/ref/CapstoneTeam11.dll
+C:/Users/Zach/Capstone/CaptsoneTeam11/obj/Debug/net9.0/compressed/ma1yf4065g-xn1w4c9s7l.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/bin/Debug/net9.0/appsettings.Development.json
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/bin/Debug/net9.0/appsettings.json
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/bin/Debug/net9.0/global.json
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/bin/Debug/net9.0/CapstoneTeam11.staticwebassets.runtime.json
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/bin/Debug/net9.0/CapstoneTeam11.staticwebassets.endpoints.json
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/bin/Debug/net9.0/CapstoneTeam11
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/bin/Debug/net9.0/CapstoneTeam11.deps.json
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/bin/Debug/net9.0/CapstoneTeam11.runtimeconfig.json
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/bin/Debug/net9.0/CapstoneTeam11.dll
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/bin/Debug/net9.0/CapstoneTeam11.pdb
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.AssemblyInfoInputs.cache
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.AssemblyInfo.cs
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.csproj.CoreCompileInputs.cache
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.MvcApplicationPartsAssemblyInfo.cache
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.RazorAssemblyInfo.cache
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.RazorAssemblyInfo.cs
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.sourcelink.json
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/scopedcss/bundle/CapstoneTeam11.styles.css
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/scopedcss/projectbundle/CapstoneTeam11.bundle.scp.css
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/ma1yf4065g-xn1w4c9s7l.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/akknosxc4z-61n19gt1b8.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/p67hn9hv2u-xtxxf3hu2r.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/fq50j98i1g-bqjiyaj88i.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/i5ph6bt6fn-c2jlpeoesf.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/gq0oyw2eyg-erw9l3u2r3.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/naqx3zca4x-aexeepp0ev.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/ax3g1w5ztq-d7shbmvgxk.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/tv0abh8tlg-ausgxo2sd3.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/v9kf200h6a-k8d9w2qqmf.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/bdseceewx0-cosvhxvwiu.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/nq4vb1szd8-ub07r2b239.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/l4krapc20w-fvhpjtyr6v.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/awb42y0lcw-b7pk76d08c.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/zaw97vbgdz-fsbi9cje9m.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/o5q7vra097-rzd6atqjts.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/d64b9ov2dg-ee0r1s7dh0.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/zjaonh6l8b-dxx9fxp4il.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/n36ludxtd9-jd9uben2k1.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/1ha0s6m0u9-khv3u5hwcm.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/4fkivcoe8i-r4e9w2rdcm.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/gebie8v6ay-lcd1t2u6c8.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/ugqr9lq3gk-c2oey78nd0.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/8cnnwlzw3c-tdbxkamptv.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/3ujiog0k0d-j5mq2jizvt.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/n5upyw7m5y-06098lyss8.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/8u4mtfov94-nvvlpmu67g.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/4r045qv7w1-s35ty4nyc5.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/gg475mfzkx-pj5nd1wqec.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/uuwqfxlres-46ein0sx1k.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/1hnpaw1j3r-v0zj4ognzu.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/auyd0iu9gi-37tfw0ft22.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/als9d9rmrt-hrwsygsryq.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/ucivhfz7r3-pk9g2wxc8p.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/s8i3gpfsgm-ft3s53vfgj.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/zp0c3rebn5-6cfz1n2cew.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/kctuafiu90-6pdc2jztkx.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/8sohzg4c8r-493y06b0oq.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/2j4ynfgir3-iovd86k7lj.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/zfjtt1sfm5-vr1egmr9el.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/hrje9xoz7h-kbrnm935zg.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/6eao21794r-jj8uyg4cgr.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/1bx7n1xulh-y7v9cxd14o.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/xm8hcb1nbu-notf2xhcfb.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/ok3o0inliy-h1s4sie4z3.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/sqws9nnen5-63fj8s7r0e.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/p8i7ec3jwz-0j3bgjxly4.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/mmigiw95t1-47otxtyo56.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/gihbydxbq3-4v8eqarkd7.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/m2ic3onczu-356vix0kms.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/adc3y8va19-83jwlth58m.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/6uh3fhtcfr-mrlpezrjn3.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/9cn6kbloyk-lzl9nlhx6b.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/b0lt691o6s-ag7o75518u.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/7ibisuh8mv-x0q3zqp4vz.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/0hvo3e5inn-0i3buxo5is.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/pa9gvbjbkf-o1o13a6vjx.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/e6yzcolmlh-ttgo8qnofa.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/7yfne2405b-2z0ns9nrw6.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/qg4xb2vm7p-muycvpuwrr.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/gnoa3wuxeg-87fc7y1x7t.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/p0sazcmwu4-mlv21k5csn.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/lke9m0l3rn-fpmvig40y4.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/compressed/8v2ji8a7lt-fpmvig40y4.gz
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/staticwebassets.build.json
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/staticwebassets.development.json
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/staticwebassets.build.endpoints.json
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/staticwebassets/msbuild.CapstoneTeam11.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/staticwebassets/msbuild.CapstoneTeam11.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/staticwebassets/msbuild.build.CapstoneTeam11.props
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.CapstoneTeam11.props
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.CapstoneTeam11.props
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/staticwebassets.pack.json
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.dll
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/refint/CapstoneTeam11.dll
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.pdb
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/CapstoneTeam11.genruntimeconfig.cache
+/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/Debug/net9.0/ref/CapstoneTeam11.dll
