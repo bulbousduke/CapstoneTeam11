@@ -8,23 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "/Users/eksha/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "/Users/kymaniscott/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/eksha/Documents/capstone/CapstoneTeam11/CapstoneTeam11.csproj",
+      "projectUniqueName": "/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/CapstoneTeam11.csproj",
       "projectName": "CapstoneTeam11",
-      "projectPath": "/Users/eksha/Documents/capstone/CapstoneTeam11/CapstoneTeam11.csproj",
-      "packagesPath": "/Users/eksha/.nuget/packages/",
-      "outputPath": "/Users/eksha/Documents/capstone/CapstoneTeam11/obj/",
+      "projectPath": "/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/CapstoneTeam11.csproj",
+      "packagesPath": "/Users/kymaniscott/.nuget/packages/",
+      "outputPath": "/Users/kymaniscott/Library/CloudStorage/OneDrive-UniversityofMissouri/INFOTC - 4970/CapstoneTeam11/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/Users/eksha/.nuget/NuGet/NuGet.Config"
+        "/Users/kymaniscott/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -72,7 +68,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
