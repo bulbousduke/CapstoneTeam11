@@ -6,7 +6,7 @@ public class UserModel
 {
     private int Id { get; set; }
 
-    private AccessLevel { get; set; }
+    private AccessLevel AccessLevel { get; set; }
 
     private string Email { get; set; }
 
