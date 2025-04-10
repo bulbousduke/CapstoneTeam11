@@ -7,7 +7,8 @@
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5001",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "MONGODB_URI": "mongodb+srv://ekshawhan:vqUud%2EzGaHSK5a4@ticklr.umbq6.mongodb.net/?retryWrites=true&w=majority&tls=true"
       }
     },
     "https": {
@@ -16,7 +17,8 @@
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7255;http://localhost:5001",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "MONGODB_URI": "mongodb+srv://ekshawhan:vqUud%2EzGaHSK5a4@ticklr.umbq6.mongodb.net/?retryWrites=true&w=majority&tls=true"
       }
     }
   }
