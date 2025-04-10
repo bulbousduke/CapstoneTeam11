@@ -16,4 +16,7 @@ namespace CapstoneTeam11.Controllers
 
         public IActionResult ViewPast()
         {
-            retu
+            return View("ViewPast/Index");
+        }
+    }
+}
