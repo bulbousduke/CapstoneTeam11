@@ -6,17 +6,14 @@ namespace CapstoneTeam11.Controllers
     {
         public IActionResult Create()
         {
-            return View();
+            return View("Create/Index");
         }
 
         public IActionResult Manage()
         {
-            return View();
+            return View("Manage/Index");
         }
 
         public IActionResult ViewPast()
         {
-            return View();
-        }
-    }
-}
+            retu
