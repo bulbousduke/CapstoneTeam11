@@ -14,6 +14,9 @@ namespace CapstoneTeam11.Controllers
             return View("Manage/Index");
         }
 
-        public IActionResult ViewPast()
-        {
-            retu
+        // public IActionResult ViewPast()
+        // {
+        //     return 
+        // }
+    }
+}

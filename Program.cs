@@ -8,15 +8,16 @@ if (connectionString == null)
     Environment.Exit(0);
 }
 var client = new MongoClient(connectionString);
-var collection = client.GetDatabase("sample_mflix").GetCollection<BsonDocument>("movies");
-var filter = Builders<BsonDocument>.Filter.Eq("title", "Back to the Future");
-var document = collection.Find(filter).First();
-Console.WriteLine(document);
+// var collection = client.GetDatabase("sample_mflix").GetCollection<BsonDocument>("movies");
+// var filter = Builders<BsonDocument>.Filter.Eq("title", "Back to the Future");
+// var document = collection.Find(filter).First();
+// Console.WriteLine(document);
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IMongoClient>(sp => new MongoClient(connectionString)); // register IMongoClient as a singleton so it can be injected
 builder.Services.AddSingleton<MongoUserService>();
 var app = builder.Build();
 

@@ -4,13 +4,13 @@ namespace CapstoneTeam11.Models;
 
 public class UserModel
 {
-    private int Id { get; set; }
+    public ObjectId Id { get; set; }
 
-    private AccessLevel AccessLevel { get; set; }
+    public AccessLevel AccessLevel { get; set; }
 
-    private string Email { get; set; }
+    public required string Email { get; set; }
 
-    private string Password { get; set; }
+    public required string Password { get; set; }
 
-    private string Name { get; set; }
+    public required string Name { get; set; }
 }
