@@ -8,9 +8,8 @@ namespace CapstoneTeam11.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-
     private readonly IMongoCollection<UserModel> _users;
-
+    
     public HomeController(ILogger<HomeController> logger, IMongoClient mongoClient)
     {
         _logger = logger;
@@ -22,7 +21,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        // return View();
+        return View();
 
         // TEST: displaying data from the database
         var allUsers = _users.Find(_ => true).ToList(); // get all users

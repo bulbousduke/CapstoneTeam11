@@ -4,7 +4,7 @@ namespace CapstoneTeam11.Models;
 
 public class UserModel
 {
-    public ObjectId Id { get; set; }
+    public ObjectId UserId { get; set; }
 
     public AccessLevel AccessLevel { get; set; }
 

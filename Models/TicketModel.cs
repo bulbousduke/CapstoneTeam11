@@ -9,21 +9,16 @@ namespace CapstoneTeam11.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-
-        [BsonElement("title")]
-        public string Title { get; set; }
+        public ObjectId TicketId { get; set; }
+        public Category Category { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public UserModel? CreatedBy { get; set; }
+        public UserModel? Assignee { get; set; }
 
         [BsonElement("description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
-        [BsonElement("status")]
-        public string Status { get; set; }
-
-        [BsonElement("createdAt")]
-        public DateTime CreatedAt { get; set; }
-
-        [BsonElement("journalNotes")]
-        public List<string> JournalNotes { get; set; }
+        public bool IsCompleted { get; set; }
+        public Priority Priority { get; set; }
     }
 }

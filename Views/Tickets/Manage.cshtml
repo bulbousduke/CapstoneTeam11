@@ -7,23 +7,24 @@
 <h2>Manage Ticket</h2>
 
 <form asp-action="Manage" method="post">
-    <input type="hidden" name="id" value="@Model.Id" />
+    <input type="hidden" name="id" value="@Model.TicketId" />
 
-    <label for="Title">Title:</label><br />
-    <input type="text" name="Title" value="@Model.Title" /><br />
+    <label for="Category">Category:</label><br />
+    <select name="Category">
+        <option value=@Category.Hardware selected="@(Model.Category == Category.Hardware)">High</option>
+        <option value=@Category.Network selected="@(Model.Category == Category.Network)">Medium</option>
+        <option value=@Category.Software selected="@(Model.Category == Category.Software)">Low</option>
+    </select><br />
 
     <label for="Description">Description:</label><br />
     <textarea name="Description">@Model.Description</textarea><br />
 
-    <label for="Status">Status:</label><br />
-    <select name="Status">
-        <option value="Open" selected="@(Model.Status == "Open")">Open</option>
-        <option value="In Progress" selected="@(Model.Status == "In Progress")">In Progress</option>
-        <option value="Closed" selected="@(Model.Status == "Closed")">Closed</option>
+    <label for="Priority">Priority:</label><br />
+    <select name="Priority">
+        <option value=@Priority.High selected="@(Model.Priority == Priority.High)">High</option>
+        <option value=@Priority.Medium selected="@(Model.Priority == Priority.Medium)">Medium</option>
+        <option value=@Priority.Low selected="@(Model.Priority == Priority.Low)">Low</option>
     </select><br />
-
-    <label for="JournalNotes">New Note:</label><br />
-    <input type="text" name="JournalNotes" /><br />
 
     <input type="submit" value="Update Ticket" />
 </form>

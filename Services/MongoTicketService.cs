@@ -2,12 +2,12 @@ using CapstoneTeam11.Models;
 using MongoDB.Driver;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
+using MongoDB.Bson;
 
 namespace CapstoneTeam11.Services
 {
     public class MongoTicketService
     {
-        
         private readonly IMongoCollection<TicketModel> _ticketCollection;
 
         public MongoTicketService(IConfiguration configuration)
@@ -18,18 +18,15 @@ namespace CapstoneTeam11.Services
             _ticketCollection = database.GetCollection<TicketModel>("tickets");
         }
 
-        public TicketModel? GetTicketById(string id)
+        public TicketModel? GetTicketById(ObjectId id)
         {
-            return _ticketCollection.Find(t => t.Id == id).FirstOrDefault();
+            return _ticketCollection.Find(t => t.TicketId == id).FirstOrDefault();
         }
 
-        public void UpdateTicket(string id, TicketModel updatedTicket)
+        public void UpdateTicket(ObjectId id, TicketModel updatedTicket)
         {
-            _ticketCollection.ReplaceOne(ticket => ticket.Id == id, updatedTicket);
+            _ticketCollection.ReplaceOne(ticket => ticket.TicketId == id, updatedTicket);
         }
-
-        
-        
 
         public void Create(TicketModel ticket) => _ticketCollection.InsertOne(ticket);
 
