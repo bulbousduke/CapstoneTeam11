@@ -19,6 +19,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IMongoClient>(sp => new MongoClient(connectionString)); // register IMongoClient as a singleton so it can be injected
 builder.Services.AddSingleton<MongoUserService>();
+builder.Services.AddSingleton<MongoTicketService>(); 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
