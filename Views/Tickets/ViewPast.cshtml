@@ -1,10 +1,45 @@
-@model IEnumerable<CapstoneTeam11.Models.TicketModel>
+@model List<CapstoneTeam11.Models.TicketModel>
 
-<h1>Past Tickets</h1>
+@{
+    ViewData["Title"] = "View Past Tickets";
+}
 
-<ul>
-    @foreach (var ticket in Model)
-    {
-        <li><strong>@ticket.Title:</strong> @ticket.Description</li>
-    }
-</ul>
+<h2>Past Tickets</h2>
+
+@if (!Model.Any())
+{
+    <p>No tickets found.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Created At</th>
+                <th>Journal Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ticket in Model)
+            {
+                <tr>
+                    <td>@ticket.Title</td>
+                    <td>@ticket.Description</td>
+                    <td>@ticket.Status</td>
+                    <td>@ticket.CreatedAt.ToLocalTime().ToString("g")</td>
+                    <td>
+                        <ul>
+                            @foreach (var note in ticket.JournalNotes)
+                            {
+                                <li>@note</li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
