@@ -1,0 +1,10 @@
+@model IEnumerable<CapstoneTeam11.Models.TicketModel>
+
+<h1>Past Tickets</h1>
+
+<ul>
+    @foreach (var ticket in Model)
+    {
+        <li><strong>@ticket.Title:</strong> @ticket.Description</li>
+    }
+</ul>
