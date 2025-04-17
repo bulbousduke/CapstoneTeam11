@@ -41,10 +41,41 @@ namespace CapstoneTeam11.Controllers
             return RedirectToAction("Manage");
         }
 
-        public IActionResult Manage()
-        {
-            return View();
-        }
+        [HttpGet]
+public IActionResult Manage(string id)
+{
+    if (string.IsNullOrEmpty(id))
+    {
+        // Show list of tickets to choose from
+        var allTickets = _ticketService.GetAllTickets();
+        return View("ViewPast", allTickets);
+    }
+
+    var ticket = _ticketService.GetTicketById(id);
+    if (ticket == null)
+    {
+        return NotFound();
+    }
+
+    return View(ticket); // This shows the edit/manage form
+}
+
+[HttpPost]
+public IActionResult Manage(string id, IFormCollection form)
+{
+    var updatedTicket = new TicketModel
+    {
+        Id = id,
+        Title = form["Title"],
+        Description = form["Description"],
+        Status = form["Status"],
+        CreatedAt = DateTime.UtcNow, // Optional: get original timestamp if desired
+        JournalNotes = new List<string> { form["JournalNotes"] }
+    };
+
+    _ticketService.UpdateTicket(id, updatedTicket);
+    return RedirectToAction("Manage"); // Go back to list
+}
 
         public IActionResult ViewPast()
         {
