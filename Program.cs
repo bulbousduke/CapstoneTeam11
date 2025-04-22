@@ -1,6 +1,7 @@
 using CapstoneTeam11.Services;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using CapstoneTeam11.Models;
 var connectionString = Environment.GetEnvironmentVariable("MONGODB_URI");
 if (connectionString == null)
 {
@@ -8,16 +9,20 @@ if (connectionString == null)
     Environment.Exit(0);
 }
 var client = new MongoClient(connectionString);
-var collection = client.GetDatabase("sample_mflix").GetCollection<BsonDocument>("movies");
-var filter = Builders<BsonDocument>.Filter.Eq("title", "Back to the Future");
-var document = collection.Find(filter).First();
-Console.WriteLine(document);
+// var collection = client.GetDatabase("sample_mflix").GetCollection<BsonDocument>("movies");
+// var filter = Builders<BsonDocument>.Filter.Eq("title", "Back to the Future");
+// var document = collection.Find(filter).First();
+// Console.WriteLine(document);
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<MongoUserService>();
+builder.Services.AddSingleton<IMongoClient>(sp => new MongoClient(connectionString)); // register IMongoClient as a singleton so it can be injected
+builder.Services.AddSingleton<UserService>();
+builder.Services.AddSingleton<TicketService>(); 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Create Ticket";
+}
+
+<h2>Create a New Ticket</h2>
+
+<form asp-action="CreateTicket" method="post">
+    <label for="Title">Title:</label><br />
+    <input type="text" name="Title" /><br />
+
+    <label for="Description">Description:</label><br />
+    <textarea name="Description"></textarea><br />
+
+    <label for="JournalNotes">Initial Note:</label><br />
+    <input type="text" name="JournalNotes" /><br />
+
+    <input type="submit" value="Create Ticket" />
+</form>

@@ -1,0 +1,30 @@
+@model CapstoneTeam11.Models.Ticket
+
+@{
+    ViewData["Title"] = "Manage Ticket";
+}
+
+<h2>Manage Ticket</h2>
+
+<form asp-action="Manage" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+
+    <label for="Category">Category:</label><br />
+    <select name="Category">
+        <option value=@Category.Hardware selected="@(Model.Category == Category.Hardware)">High</option>
+        <option value=@Category.Network selected="@(Model.Category == Category.Network)">Medium</option>
+        <option value=@Category.Software selected="@(Model.Category == Category.Software)">Low</option>
+    </select><br />
+
+    <label for="Description">Description:</label><br />
+    <textarea name="Description">@Model.Description</textarea><br />
+
+    <label for="Priority">Priority:</label><br />
+    <select name="Priority">
+        <option value=@Priority.High selected="@(Model.Priority == Priority.High)">High</option>
+        <option value=@Priority.Medium selected="@(Model.Priority == Priority.Medium)">Medium</option>
+        <option value=@Priority.Low selected="@(Model.Priority == Priority.Low)">Low</option>
+    </select><br />
+
+    <input type="submit" value="Update Ticket" />
+</form>
