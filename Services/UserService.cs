@@ -2,12 +2,14 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using Microsoft.Extensions.Configuration;
 using System.Security.Authentication;
+using CapstoneTeam11.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace CapstoneTeam11.Services
 {
     public class UserService : IUserService
     {
-        private readonly IMongoCollection<BsonDocument> _usersCollection;
+        private readonly IMongoCollection<User> _usersCollection;
 
         public UserService(IConfiguration configuration)
         {
@@ -21,13 +23,19 @@ namespace CapstoneTeam11.Services
 
             var client = new MongoClient(settings);
             var database = client.GetDatabase("TICKLR");
-            _usersCollection = database.GetCollection<BsonDocument>("users");
+            _usersCollection = database.GetCollection<User>("users");
         }
 
-        public BsonDocument GetUserByUsername(string username)
+        public async Task<User?> GetUserById(string id)
         {
-            var filter = Builders<BsonDocument>.Filter.Eq("username", username);
-            return _usersCollection.Find(filter).FirstOrDefault();
+            return await _usersCollection.Find(u => u.Id == id).FirstOrDefaultAsync();
+        }
+        
+        public async Task<User?> Create(User user)
+        {
+            user.Id = ObjectId.GenerateNewId().ToString();
+            await _usersCollection.InsertOneAsync(user);
+            return user;
         }
     }
 }

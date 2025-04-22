@@ -2,7 +2,7 @@ using CapstoneTeam11.Models;
 using Microsoft.AspNetCore.Authentication;
 using MongoDB.Driver;
 
-namespace CapstoneTeam11;
+namespace CapstoneTeam11.Services;
 
 public interface ITicketService 
 {
