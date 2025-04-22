@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using CapstoneTeam11.Models;
 using CapstoneTeam11.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -6,9 +7,9 @@ using MongoDB.Bson;
 namespace CapstoneTeam11.Controllers;
 public class TicketsController : Controller
 {
-    private readonly MongoTicketService _ticketService;
+    private readonly TicketService _ticketService;
 
-    public TicketsController(MongoTicketService ticketService)
+    public TicketsController(TicketService ticketService)
     {
         _ticketService = ticketService;
     }
@@ -20,9 +21,9 @@ public class TicketsController : Controller
     }
 
     [HttpPost]
-    public IActionResult CreateTicket(IFormCollection form)
+    public async Task<IActionResult> CreateTicket(IFormCollection form)
     {
-        var admin = new UserModel()
+        var admin = new User()
         {
             AccessLevel = AccessLevel.User,
             Email = "bburger@gmail.com",
@@ -30,7 +31,7 @@ public class TicketsController : Controller
             Name = "Bob Burger"
         };
 
-        var ticket = new TicketModel()
+        var ticket = new Ticket()
         {
             Category = Category.Hardware,
             CreatedDate = DateTime.Now,
@@ -46,12 +47,12 @@ public class TicketsController : Controller
         //     ticket.JournalNotes.Add(note);
         // }
 
-        _ticketService.Create(ticket);
+        await _ticketService.Create(ticket);
         return RedirectToAction("Manage");
     }
 
     [HttpGet]
-    public IActionResult Manage(ObjectId id)
+    public IActionResult Manage(string id)
     {
         var ticket = _ticketService.GetTicketById(id);
         if (ticket == null)

@@ -5,11 +5,11 @@ using System.Security.Authentication;
 
 namespace CapstoneTeam11.Services
 {
-    public class MongoUserService
+    public class UserService : IUserService
     {
         private readonly IMongoCollection<BsonDocument> _usersCollection;
 
-        public MongoUserService(IConfiguration configuration)
+        public UserService(IConfiguration configuration)
         {
             var connectionString = configuration["MONGODB_URI"];
             var settings = MongoClientSettings.FromConnectionString(connectionString);
