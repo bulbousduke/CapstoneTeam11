@@ -1,6 +1,7 @@
 using CapstoneTeam11.Services;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using CapstoneTeam11.Models;
 var connectionString = Environment.GetEnvironmentVariable("MONGODB_URI");
 if (connectionString == null)
 {
@@ -18,8 +19,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IMongoClient>(sp => new MongoClient(connectionString)); // register IMongoClient as a singleton so it can be injected
-builder.Services.AddSingleton<MongoUserService>();
-builder.Services.AddSingleton<MongoTicketService>(); 
+builder.Services.AddSingleton<UserService>();
+builder.Services.AddSingleton<TicketService>(); 
 
 
 var app = builder.Build();
