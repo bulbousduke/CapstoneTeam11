@@ -30,12 +30,28 @@ namespace CapstoneTeam11.Services
         {
             return await _usersCollection.Find(u => u.Id == id).FirstOrDefaultAsync();
         }
-        
+
         public async Task<User?> Create(User user)
         {
             user.Id = ObjectId.GenerateNewId().ToString();
             await _usersCollection.InsertOneAsync(user);
             return user;
+        }
+
+        public async Task<ReplaceOneResult> Update(string id, User updatedUser)
+        {
+            return await _usersCollection.ReplaceOneAsync(user => user.Id == id, updatedUser);
+        }
+
+
+        public async Task<List<User>> GetAllUsers()
+        {
+            return await _usersCollection.Find(u => true).ToListAsync();
+        }
+
+        public async Task Remove(string id)
+        {
+            await _usersCollection.DeleteOneAsync(u => u.Id == id);
         }
     }
 }

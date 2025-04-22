@@ -40,5 +40,10 @@ namespace CapstoneTeam11.Services
         {
             return await _ticketCollection.Find(t => true).ToListAsync();
         }
+
+        public async Task Remove(string id)
+        {
+            await _ticketCollection.DeleteOneAsync(t => t.Id == id);
+        }
     }
 }

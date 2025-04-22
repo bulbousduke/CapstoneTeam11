@@ -10,4 +10,5 @@ public interface ITicketService
     Task<Ticket?> Create(Ticket ticket);
     Task<List<Ticket>> GetAllTickets();
     Task<ReplaceOneResult> Update(string id, Ticket ticket);
+    Task Remove(string id);
 }
