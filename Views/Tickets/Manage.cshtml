@@ -1,4 +1,4 @@
-@model CapstoneTeam11.Models.TicketModel
+@model CapstoneTeam11.Models.Ticket
 
 @{
     ViewData["Title"] = "Manage Ticket";
@@ -7,7 +7,7 @@
 <h2>Manage Ticket</h2>
 
 <form asp-action="Manage" method="post">
-    <input type="hidden" name="id" value="@Model.TicketId" />
+    <input type="hidden" name="id" value="@Model.Id" />
 
     <label for="Category">Category:</label><br />
     <select name="Category">

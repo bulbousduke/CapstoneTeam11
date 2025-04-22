@@ -2,6 +2,8 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using CapstoneTeam11.Models;
 using MongoDB.Driver;
+using CapstoneTeam11.Services;
+using System.Threading.Tasks;
 
 namespace CapstoneTeam11.Controllers;
 
@@ -9,10 +11,12 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private readonly IMongoCollection<User> _users;
+    private readonly UserService _userService;
     
-    public HomeController(ILogger<HomeController> logger, IMongoClient mongoClient)
+    public HomeController(ILogger<HomeController> logger, IMongoClient mongoClient, UserService userService)
     {
         _logger = logger;
+        _userService = userService;
 
         // define database and collection variables
         var database = mongoClient.GetDatabase("TICKLR");
@@ -28,9 +32,9 @@ public class HomeController : Controller
         // return View(allUsers); // pass data to the view
     }
 
-    public IActionResult Privacy()
+    public async Task<IActionResult> Privacy()
     {
-        var allUsers = _users.Find(_ => true).ToList(); // get all users
+        var allUsers = await _userService.GetAllUsers();
         return View(allUsers); // pass data to the view
         // return View();
     }
