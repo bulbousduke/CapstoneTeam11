@@ -1,12 +1,36 @@
+@{
+    ViewData["Title"] = "Login to Ticklr";
+}
+
+@* data passed from controller *@
+@* @model List<CapstoneTeam11.Models.User> *@
+
 <!DOCTYPE html>
 <html lang="=en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticklr Login</title>
+
+    @* import font *@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="~/css/site.css">
 </head>
 <body>
-    
+    <h1>@ViewData["Title"]</h1>
+
+    @* no logic created for form submission yet *@
+    <form method="post">
+        <label for="Username">Username:</label>
+        <input type="text" name="Username" /><br /><br>
+
+        <label for="Password">Password:</label>
+        <input type="password" name="password" /><br /><br>
+        
+        <input type="submit" value="Login" />
+    </form>
 </body>
 </html>

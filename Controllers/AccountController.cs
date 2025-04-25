@@ -11,4 +11,9 @@ public class AccountController : Controller
     {
         _userService = userService;
     }
+
+    public IActionResult Login()
+    {
+        return View();
+    }
 }

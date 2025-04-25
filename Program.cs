@@ -22,6 +22,8 @@ builder.Services.AddSingleton<IMongoClient>(sp => new MongoClient(connectionStri
 builder.Services.AddSingleton<UserService>();
 builder.Services.AddSingleton<TicketService>(); 
 
+// register user service interface
+builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 
