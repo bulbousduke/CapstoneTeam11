@@ -105,3 +105,16 @@ body {
     font-weight: 700;
     font-style: italic;
   }
+
+  /* Creat.cshtml */
+
+  .submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    background-color: #827A81;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
