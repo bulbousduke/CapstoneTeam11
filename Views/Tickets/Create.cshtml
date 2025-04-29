@@ -1,18 +1,37 @@
+@model CapstoneTeam11.Models.Ticket
+
 @{
-    ViewData["Title"] = "Create Ticket";
+    ViewData["Title"] = "Create New Ticket";
 }
 
-<h2>Create a New Ticket</h2>
+<h2>Create New Ticket</h2>
 
-<form asp-action="CreateTicket" method="post">
-    <label for="Title">Title:</label><br />
-    <input type="text" name="Title" /><br />
+<form asp-controller="Tickets" asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Description" class="control-label">Description</label>
+        <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
 
-    <label for="Description">Description:</label><br />
-    <textarea name="Description"></textarea><br />
+    <div class="form-group">
+        <label asp-for="Category" class="control-label">Category</label>
+        <select asp-for="Category" class="form-control" asp-items="Html.GetEnumSelectList<Category>()">
+            <option value="">-- Select Category --</option>
+        </select>
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
 
-    <label for="JournalNotes">Initial Note:</label><br />
-    <input type="text" name="JournalNotes" /><br />
+    <div class="form-group">
+        <label asp-for="Priority" class="control-label">Priority</label>
+        <select asp-for="Priority" class="form-control" asp-items="Html.GetEnumSelectList<Priority>()">
+            <option value="">-- Select Priority --</option>
+        </select>
+        <span asp-validation-for="Priority" class="text-danger"></span>
+    </div>
 
-    <input type="submit" value="Create Ticket" />
+    <button type="submit" class="btn btn-primary mt-3">Create Ticket</button>
 </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,8 +1,11 @@
 namespace CapstoneTeam11;
 
-public enum Category 
+public enum Category
 {
-    Network,
+    Hardware,
     Software,
-    Hardware
+    Network,
+    Account,
+    Other
+
 }

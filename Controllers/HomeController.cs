@@ -13,14 +13,14 @@ public class HomeController : Controller
     private readonly IMongoCollection<User> _users;
     private readonly UserService _userService;
     
-    public HomeController(ILogger<HomeController> logger, IMongoClient mongoClient, UserService userService)
+    public HomeController(ILogger<HomeController> logger, UserService userService)
     {
         _logger = logger;
         _userService = userService;
 
         // define database and collection variables
-        var database = mongoClient.GetDatabase("TICKLR");
-        _users = database.GetCollection<User>("users");
+        
+      
     }
 
     public IActionResult Index()
