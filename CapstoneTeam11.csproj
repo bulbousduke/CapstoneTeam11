@@ -8,8 +8,15 @@
 
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+<<<<<<< HEAD
     <PackageReference Include="MongoDB.BSon" Version="2.26.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.25.1" />
+=======
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.3.0" />
+    <PackageReference Include="MongoDB.BSon" Version="3.3.0" />
+    <PackageReference Include="MongoDB.Driver" Version="3.3.0" />
+    <PackageReference Include="System.Web.Mvc.Extensions" Version="1.1.1.2" />
+>>>>>>> origin/main
   </ItemGroup>
 
 </Project>
