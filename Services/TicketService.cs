@@ -35,4 +35,12 @@ namespace CapstoneTeam11.Services
 
         public async Task<ReplaceOneResult> Update(string id, Ticket updatedTicket)
         {
-            return await _ticketCollection.ReplaceOneAsync(t => t.Id == i
+            return await _ticketCollection.ReplaceOneAsync(t => t.Id == id, updatedTicket);
+        }
+
+        public async Task Remove(string id)
+        {
+            await _ticketCollection.DeleteOneAsync(t => t.Id == id);
+        }
+    }
+}
