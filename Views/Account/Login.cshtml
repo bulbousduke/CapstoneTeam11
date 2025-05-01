@@ -31,5 +31,10 @@
         </div>
         <input type="submit" value="Login" />
     </form>
+
+    @if (ViewBag.Error != null)
+    {
+        <p style="color:red">@ViewBag.Error</p>
+    }
 </body>
 </html>

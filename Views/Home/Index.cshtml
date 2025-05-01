@@ -11,8 +11,19 @@
     <link rel="stylesheet" href="~/css/site.css">
 </head>
 <body>
-    @* navbar is rendered for all pages in _Layout.cshtml *@
-    
+    <nav class="navbar">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+            <img src="@Url.Content("~/images/Asset 2.png")" alt="Ticklr Logo" class="navbar-logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="">Home</a></li>
+            <li><a asp-controller="Home" asp-action="Help">Help</a></li>
+            <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+            <li><a asp-controller="Account" asp-action="Register">Register</a></li>
+            <li><a asp-controller="Account" asp-action="Logout">Sign Out</a></li>
+            <li class="user-icon"><i class="fas fa-user"></i></li>
+        </ul>
+    </nav>
     <div class="dashboard">
         <h1>Welcome to Ticklr Ticket Management Dashboard</h1>
         <div class="container text-center mt-4">
