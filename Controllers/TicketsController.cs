@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using BCrypt.Net;
 using CapstoneTeam11.Models;
 using CapstoneTeam11.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -27,7 +28,7 @@ public class TicketsController : Controller
         {
             AccessLevel = AccessLevel.User,
             Email = "bburger@gmail.com",
-            Password = "burger123",
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword("burger123"),
             Name = "Bob Burger"
         };
 
@@ -40,12 +41,6 @@ public class TicketsController : Controller
             Description = "Charging port not working for laptop",
             Priority = Priority.Medium
         };
-
-        // var note = form["JournalNotes"];
-        // if (!string.IsNullOrWhiteSpace(note))
-        // {
-        //     ticket.JournalNotes.Add(note);
-        // }
 
         await _ticketService.Create(ticket);
         return RedirectToAction("Manage");
