@@ -69,7 +69,7 @@ namespace CapstoneTeam11.Services
                 Id = ObjectId.GenerateNewId().ToString(),
                 Name = name,
                 Email = email,
-                Password = BCrypt.Net.BCrypt.HashPassword(password),
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
                 AccessLevel = AccessLevel.User
             };
 
@@ -80,7 +80,7 @@ namespace CapstoneTeam11.Services
         public User? Login(string email, string password)
         {
             var user = _usersCollection.Find(u => u.Email == email).FirstOrDefault();
-            if (user != null && BCrypt.Net.BCrypt.Verify(password, user.Password))
+            if (user != null && BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
             {
                 return user;
             }

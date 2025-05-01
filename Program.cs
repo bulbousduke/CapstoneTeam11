@@ -22,6 +22,14 @@ builder.Services.AddSingleton<IMongoClient>(sp => new MongoClient(connectionStri
 builder.Services.AddSingleton<UserService>();
 builder.Services.AddSingleton<TicketService>(); 
 
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(20);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
@@ -37,6 +45,8 @@ app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapStaticAssets();
 
