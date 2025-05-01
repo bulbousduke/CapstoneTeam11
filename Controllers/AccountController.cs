@@ -46,6 +46,6 @@ public class AccountController : Controller
     public IActionResult Logout()
     {
         HttpContext.Session.Clear();
-        return RedirectToAction("Logic");
+        return RedirectToAction("Login");
     }
 }
