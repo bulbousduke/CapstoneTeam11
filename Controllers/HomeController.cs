@@ -49,4 +49,10 @@ namespace CapstoneTeam11.Controllers
             return View(); // returns the Help view
         }
     }
+
+    public IActionResult Login()
+    {
+        return View();
+    }
+
 }
