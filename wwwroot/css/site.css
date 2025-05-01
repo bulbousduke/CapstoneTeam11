@@ -1,9 +1,3 @@
-/* body {
-    background-color: #E6D6E5;
-    font-family: Arial, sans-serif;
-    text-align: center;
-} */
-
 /* import font - atkinson hyperlegible */
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
@@ -15,18 +9,26 @@ body {
     text-align: center;
 }
 
-/* global styling for focus indicators */
-:focus {
-    /* border-color: 1px solid black; */
-    outline: 2px solid black;
-    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+/* custom styling for forms - responsive scaling */
+.form-container {
+    margin: 0 auto;
+    padding: 20px;
 }
-
-/* focus indicator styling for hamburger menu */
-.navbar-toggler:focus {
-    border-color: #000;
-    outline: 2px solid white;
-    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+.form-item {
+    display: flex;
+    flex-direction: column; /* stack label and input vertically */
+    margin-bottom: 15px;
+}
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left; 
+}
+/* styling for input fields (excluding submit) */
+input[type="text"], input[type="password"] {
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .navbar {
