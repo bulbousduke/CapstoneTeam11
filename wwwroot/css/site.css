@@ -4,12 +4,29 @@
     text-align: center;
 } */
 
+/* import font - atkinson hyperlegible */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 body {
     background-color: #E6D6E5;
     font-family: "Atkinson Hyperlegible", sans-serif;
     font-weight: 400;
     font-style: normal;
     text-align: center;
+}
+
+/* global styling for focus indicators */
+:focus {
+    /* border-color: 1px solid black; */
+    outline: 2px solid black;
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+}
+
+/* focus indicator styling for hamburger menu */
+.navbar-toggler:focus {
+    border-color: #000;
+    outline: 2px solid white;
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
 }
 
 .navbar {
