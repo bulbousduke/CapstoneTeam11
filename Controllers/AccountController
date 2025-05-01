@@ -1,0 +1,50 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+using CapstoneTeam11.Models;
+
+public class AccountController : Controller
+{
+    // Display login page
+    [HttpGet]
+    public IActionResult Login()
+    {
+        return View();
+    }
+
+    // Handle login logic
+    [HttpPost]
+    public async Task<IActionResult> Login(LoginModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            // Assuming you have a user service that checks credentials
+            var user = await _userService.ValidateUserAsync(model.Username, model.Password);
+
+            if (user != null)
+            {
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, model.Username)
+                };
+
+                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+
+                return RedirectToAction("Index", "Dashboard"); // Redirect to dashboard
+            }
+
+            ModelState.AddModelError("", "Invalid login attempt.");
+        }
+
+        return View(model);
+    }
+
+    // Logout
+    public async Task<IActionResult> Logout()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return RedirectToAction("Login", "Account"); // Redirect back to login page
+    }
+}
