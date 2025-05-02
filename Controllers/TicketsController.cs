@@ -7,7 +7,10 @@ namespace CapstoneTeam11.Controllers
 {
     public class TicketsController : Controller
     {
+        private readonly string simulatedUserId = "6813b6a72ecf1298f30838b7"; // change to simulate different accounts
+        private readonly string simulatedUserRole = "Employee"; // "Admin", "Employee", or "User"
         private readonly TicketService _ticketService;
+
 
         public TicketsController(TicketService ticketService)
         {
@@ -48,12 +51,39 @@ public async Task<IActionResult> Create(IFormCollection form)
     return RedirectToAction("ViewPast");
 }
 
-        [HttpGet]
-        public async Task<IActionResult> ViewPast()
+       [HttpGet]
+public async Task<IActionResult> ViewPast()
+{
+    var allTickets = await _ticketService.GetAllTickets();
+    IEnumerable<Ticket> visibleTickets;
+
+    if (simulatedUserRole == "Admin")
+    {
+        visibleTickets = allTickets;
+    }
+    else if (simulatedUserRole == "Employee")
+    {
+        // Simulate employee category access
+        var employeeCategoryMap = new Dictionary<string, List<Category>>
         {
-            var tickets = await _ticketService.GetAllTickets();
-            return View(tickets);
-        }
+            { "6813b6a72ecf1298f30838b7", new List<Category> { Category.Hardware, Category.Account } }
+        };
+
+        var allowedCategories = employeeCategoryMap.ContainsKey(simulatedUserId)
+            ? employeeCategoryMap[simulatedUserId]
+            : new List<Category>();
+
+        visibleTickets = allTickets.Where(t =>
+            t.Assignee == simulatedUserId &&
+            allowedCategories.Contains(t.Category));
+    }
+    else // User
+    {
+        visibleTickets = allTickets.Where(t => t.CreatedBy?.UserId == simulatedUserId);
+    }
+
+    return View(visibleTickets);
+}
 
         [HttpGet]
         public async Task<IActionResult> Manage(string id)
