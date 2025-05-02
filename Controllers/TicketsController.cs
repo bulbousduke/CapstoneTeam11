@@ -7,8 +7,8 @@ namespace CapstoneTeam11.Controllers
 {
     public class TicketsController : Controller
     {
-        private readonly string simulatedUserId = "6813b6a72ecf1298f30838b7"; // change to simulate different accounts
-        private readonly string simulatedUserRole = "Employee"; // "Admin", "Employee", or "User"
+        private readonly string simulatedUserId = "6813af7c2ecf1298f30838b5"; // change to simulate different accounts
+        private readonly string simulatedUserRole = "Admin"; // "Admin", "Employee", or "User"
         private readonly TicketService _ticketService;
 
 
@@ -37,9 +37,9 @@ public async Task<IActionResult> Create(IFormCollection form)
         CreatedBy = new User
         {
             UserId = ObjectId.GenerateNewId().ToString(),
-            AccessLevel = AccessLevel.User,
+            AccessLevel = AccessLevel.User, //string to enum
             Email = "admin@example.com",
-            Password = "admin123",
+            PasswordHash = "admin123",
             Name = "Admin User"
         },
         Assignee = null, 
@@ -82,7 +82,7 @@ public async Task<IActionResult> ViewPast()
         visibleTickets = allTickets.Where(t => t.CreatedBy?.UserId == simulatedUserId);
     }
 
-    return View(visibleTickets);
+    return View(visibleTickets.ToList());
 }
 
         [HttpGet]

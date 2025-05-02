@@ -4,22 +4,25 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CapstoneTeam11.Models;
  public class User
-    {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        [BsonElement("_id")] // Map MongoDB _id field
-        public string? UserId { get; set; }
+{
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string Id { get; set; } // MongoDB _id field 
 
-        [BsonElement("accessLevel")]
-        [BsonRepresentation(BsonType.String)] // Store enum as a string
-        public AccessLevel AccessLevel { get; set; }
+    [BsonElement("UserId")]
+    public string UserId { get; set; }
 
-        [BsonElement("email")]
-        public required string Email { get; set; }
+    [BsonElement("AccessLevel")]
+    public AccessLevel AccessLevel { get; set; } //string to enum
 
-        [BsonElement("password")]
-        public required string Password { get; set; }
+    [BsonElement("Email")]
+    public string Email { get; set; }
 
-        [BsonElement("name")]
-        public required string Name { get; set; }
-    }
+    [BsonElement("Name")]
+    public string Name { get; set; }
+
+    [BsonElement("PasswordHash")]
+    public string PasswordHash { get; set; }
+
+    [BsonElement("AssignedCategories")]
+    public List<string> AssignedCategories { get; set; 
