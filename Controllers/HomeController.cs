@@ -4,9 +4,11 @@ using CapstoneTeam11.Models;
 using MongoDB.Driver;
 using CapstoneTeam11.Services;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CapstoneTeam11.Controllers;
 
+[Authorize]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;

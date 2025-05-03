@@ -70,7 +70,8 @@ namespace CapstoneTeam11.Services
                 Name = name,
                 Email = email,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
-                AccessLevel = AccessLevel.User
+                AccessLevel = AccessLevel.User,
+                AssignedCategories = []
             };
 
             _usersCollection.InsertOneAsync(user);

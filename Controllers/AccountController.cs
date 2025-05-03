@@ -1,6 +1,10 @@
 using CapstoneTeam11.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace CapstoneTeam11.Controllers;
 
@@ -17,8 +21,14 @@ public class AccountController : Controller
     public IActionResult Register() => View();
 
     [HttpPost]
-    public IActionResult Register(string name, string email, string password)
+    public IActionResult Register(string name, string email, string password, string confirmPassword)
     {
+        if (password != confirmPassword)
+        {
+            ViewBag.Error = "Passwords do not match.";
+            return View();
+        }
+
         if (_userService.Register(name, email, password, out var error))
         {
             return RedirectToAction("Login");
@@ -29,13 +39,31 @@ public class AccountController : Controller
     }
 
     // GET: /Account/Login
-    public IActionResult Login(string email, string password)
+    [AllowAnonymous]
+    public IActionResult Login()
+    {
+        var emailCookie = Request.Cookies["PreviousEmails"];
+        ViewBag.PreviousEmails = emailCookie?.Split(',').Distinct().ToList() ?? new List<string>();
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Login(string email, string password)
     {
         var user = _userService.Login(email, password);
-
         if (user != null)
         {
-            HttpContext.Session.SetString("Email", user.Email);
+            var claims = new List<Claim>
+            {
+                new(ClaimTypes.Name, user.Name),
+                new(ClaimTypes.Email, user.Email),
+            };
+
+            var identity = new ClaimsIdentity(claims, "MyCookieAuth");
+            var principal = new ClaimsPrincipal(identity);
+
+            await HttpContext.SignInAsync("MyCookieAuth", principal);
+
             return RedirectToAction("Index", "Home");
         }
 
@@ -43,9 +71,9 @@ public class AccountController : Controller
         return View();
     }
 
-    public IActionResult Logout()
+    public async Task<IActionResult> Logout()
     {
-        HttpContext.Session.Clear();
+        await HttpContext.SignOutAsync("MyCookieAuth");
         return RedirectToAction("Login");
     }
 }
