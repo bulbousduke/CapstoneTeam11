@@ -4,19 +4,21 @@ using CapstoneTeam11.Models;
 using MongoDB.Driver;
 using CapstoneTeam11.Services;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
-namespace CapstoneTeam11.Controllers
+namespace CapstoneTeam11.Controllers;
+
+[Authorize]
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly ILogger<HomeController> _logger;
+    private readonly IMongoCollection<User> _users;
+    private readonly UserService _userService;
+    
+    public HomeController(ILogger<HomeController> logger, IMongoClient mongoClient, UserService userService)
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly IMongoCollection<User> _users;
-        private readonly UserService _userService;
-        
-        public HomeController(ILogger<HomeController> logger, UserService userService)
-        {
-            _logger = logger;
-            _userService = userService;
+        _logger = logger;
+        _userService = userService;
 
             // define database and collection variables
         }
