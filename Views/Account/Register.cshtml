@@ -12,7 +12,9 @@
 </head>
 <body>
     <h1>@ViewData["Title"]</h1>
-    <p>Fill out the form to create an account.</p>
+    <p>Already have an account? 
+        <a asp-controller="Account" asp-action="Login">Return to user login.</a>
+    </p>
 
     @* no logic created for form submission yet *@
     <form method="post" class="form-container">
