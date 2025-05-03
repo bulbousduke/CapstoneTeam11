@@ -24,13 +24,6 @@
         <div class="form-item">
             <label for="Email">Email Address:</label>
             <input list="emails" type="text" name="Email" required/><br /><br>
-        </div>
-        <div class="form-item">        <datalist id="emails"></datalist>
-        @foreach (var email in ViewBag.PreviousEmails as List<string>)
-        {
-            <option value="@email" />
-        }
-        </datalist>
 
             <label for="Password">Password:</label>
             <input type="password" name="Password" /><br /><br>
