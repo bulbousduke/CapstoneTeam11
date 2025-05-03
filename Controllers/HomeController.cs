@@ -50,7 +50,7 @@ public class HomeController : Controller
         {
             return View(); // returns the Help view
         }
-    }
+    
 
     public IActionResult Login()
     {
