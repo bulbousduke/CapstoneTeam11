@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+@* data passed from controller *@
+@model List<CapstoneTeam11.Models.User>
+
+<!DOCTYPE html>
+<html lang="=en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticklr Login</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <h1>@ViewData["Title"]</h1>
+    <p>New to Ticklr?
+        <a asp-controller="Account" asp-action="Register">Register for an account.</a>
+    </p>
+
+    @* no logic created for form submission yet *@
+    <form method="post" class="form-container">
+        <div class="form-item">
+            <label for="Email">Email Address:</label>
+            <input list="emails" type="text" name="Email" required/><br /><br>
+
+            <label for="Password">Password:</label>
+            <input type="password" name="Password" /><br /><br>
+        </div>
+        <input type="submit" value="Login" />
+    </form>
+
+    @if (ViewBag.Error != null)
+    {
+        <p style="color:red">@ViewBag.Error</p>
+    }
+</body>
+</html>

@@ -4,6 +4,8 @@ using Microsoft.Extensions.Configuration;
 using System.Security.Authentication;
 using CapstoneTeam11.Models;
 using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration.UserSecrets;
 
 namespace CapstoneTeam11.Services
 {
@@ -43,7 +45,6 @@ namespace CapstoneTeam11.Services
             return await _usersCollection.ReplaceOneAsync(user => user.Id == id, updatedUser);
         }
 
-
         public async Task<List<User>> GetAllUsers()
         {
             return await _usersCollection.Find(u => true).ToListAsync();
@@ -52,6 +53,40 @@ namespace CapstoneTeam11.Services
         public async Task Remove(string id)
         {
             await _usersCollection.DeleteOneAsync(u => u.Id == id);
+        }
+
+        public bool Register(string name, string email, string password, out string error)
+        {
+            error = "";
+            if(_usersCollection.Find(u => u.Email == email).Any())
+            {
+                error = "There is already account registered under that email.";
+                return false;
+            }
+
+            var user = new User
+            {
+                Id = ObjectId.GenerateNewId().ToString(),
+                Name = name,
+                Email = email,
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
+                AccessLevel = AccessLevel.User,
+                AssignedCategories = []
+            };
+
+            _usersCollection.InsertOneAsync(user);
+            return true;
+        }
+
+        public User? Login(string email, string password)
+        {
+            var user = _usersCollection.Find(u => u.Email == email).FirstOrDefault();
+            if (user != null && BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
+            {
+                return user;
+            }
+
+            return null;
         }
     }
 }

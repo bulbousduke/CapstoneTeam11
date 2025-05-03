@@ -4,24 +4,15 @@ using CapstoneTeam11.Models;
 using MongoDB.Driver;
 using CapstoneTeam11.Services;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CapstoneTeam11.Controllers;
 
-public class HomeController : Controller
+[Authorize]
+public class HomeController(ILogger<HomeController> logger, UserService userService) : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-    private readonly IMongoCollection<User> _users;
-    private readonly UserService _userService;
-    
-    public HomeController(ILogger<HomeController> logger, IMongoClient mongoClient, UserService userService)
-    {
-        _logger = logger;
-        _userService = userService;
-
-        // define database and collection variables
-        var database = mongoClient.GetDatabase("TICKLR");
-        _users = database.GetCollection<User>("users");
-    }
+    private readonly ILogger<HomeController> _logger = logger;
+    private readonly UserService _userService = userService;
 
     public IActionResult Index()
     {
@@ -43,5 +34,11 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    // Correct placement of Help method inside HomeController class
+    public IActionResult Help()
+    {
+        return View(); // returns the Help view
     }
 }

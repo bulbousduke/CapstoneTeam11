@@ -21,7 +21,30 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IMongoClient>(sp => new MongoClient(connectionString)); // register IMongoClient as a singleton so it can be injected
 builder.Services.AddSingleton<UserService>();
 builder.Services.AddSingleton<TicketService>(); 
+builder.Services.AddHttpContextAccessor();
 
+builder.Services.AddAuthentication("MyCookieAuth")
+    .AddCookie("MyCookieAuth", options =>
+    {
+        options.LoginPath = "/Account/Login";
+        options.AccessDeniedPath = "/Account/AccessDenied";
+    });
+
+builder.Services.AddAuthorization();
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddControllersWithViews();
+
+// register user service interface
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(20);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
@@ -36,7 +59,10 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapStaticAssets();
 
@@ -44,6 +70,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
-
 
 app.Run();
