@@ -4,4 +4,5 @@ public enum AccessLevel
 {
     Admin,
     Employee,
-   
+    User
+}

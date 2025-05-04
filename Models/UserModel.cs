@@ -25,4 +25,7 @@ namespace CapstoneTeam11.Models;
     public string PasswordHash { get; set; }
 
     [BsonElement("AssignedCategories")]
-    public List<string> AssignedCategories { get; set; 
+    public List<string> AssignedCategories { get; set; } = new();
+
+    
+}
