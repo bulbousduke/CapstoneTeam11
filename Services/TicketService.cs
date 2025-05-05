@@ -27,7 +27,7 @@ namespace CapstoneTeam11.Services
             return await _ticketCollection.Find(t => t.Id == id).FirstOrDefaultAsync();
         }
 
-        public async Task<Ticket> Create(Ticket ticket) // <-- Added this Create method
+        public async Task<Ticket?> Create(Ticket ticket) // <-- Added this Create method
         {
             await _ticketCollection.InsertOneAsync(ticket);
             return ticket;

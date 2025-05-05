@@ -1,21 +1,38 @@
 using CapstoneTeam11.Services;
 using MongoDB.Driver;
-using MongoDB.Bson;
 using CapstoneTeam11.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton<IMongoClient>(s =>
-    new MongoClient(builder.Configuration["mongodb+srv://ekshawhan:vqUud.zGaHSK5a4@ticklr.umbq6.mongodb.net/?retryWrites=true&w=majority&appName=Ticklr"]));
+// MongoDB connection
+builder.Services.AddSingleton<IMongoClient>(sp =>
+    new MongoClient("mongodb+srv://ekshawhan:vqUud.zGaHSK5a4@ticklr.umbq6.mongodb.net/?retryWrites=true&w=majority&appName=Ticklr"));
 
-// Add services to the container
-builder.Services.AddControllersWithViews();
+// Inject the MongoDB database itself
+builder.Services.AddSingleton(sp =>
+{
+    var client = sp.GetRequiredService<IMongoClient>();
+    return client.GetDatabase("Ticklr"); // replace with your DB name if different
+});
+
+// Register services
+builder.Services.AddSingleton<IUserService, UserService>();
 builder.Services.AddSingleton<TicketService>();
-builder.Services.AddSingleton<UserService>();
+
+// Add authentication
+builder.Services.AddAuthentication("MyCookieAuth")
+    .AddCookie("MyCookieAuth", options =>
+    {
+        options.LoginPath = "/Account/Login";
+        options.LogoutPath = "/Account/Logout";
+    });
+
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Middleware pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -27,10 +44,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Auth middleware
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=Login}/{id?}"); // default to login
 
 app.Run();

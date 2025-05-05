@@ -2,19 +2,21 @@ using CapstoneTeam11.Models;
 using CapstoneTeam11.Services;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson; 
+using System.Security.Claims;
 
 namespace CapstoneTeam11.Controllers
 {
     public class TicketsController : Controller
     {
-        private readonly string simulatedUserId = "6813af7c2ecf1298f30838b5"; // change to simulate different accounts
-        private readonly string simulatedUserRole = "Admin"; // "Admin", "Employee", or "User"
+        
         private readonly TicketService _ticketService;
+        private readonly UserService _userService;
 
 
-        public TicketsController(TicketService ticketService)
+        public TicketsController(TicketService ticketService, UserService userService)
         {
             _ticketService = ticketService;
+            _userService = userService;
         }
 
         [HttpGet]
@@ -52,37 +54,40 @@ public async Task<IActionResult> Create(IFormCollection form)
 }
 
        [HttpGet]
+[HttpGet]
 public async Task<IActionResult> ViewPast()
 {
     var allTickets = await _ticketService.GetAllTickets();
+    var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+    var userAccessLevel = User.FindFirst("AccessLevel")?.Value;
+
+    if (userEmail == null || userAccessLevel == null)
+        return Unauthorized();
+
     IEnumerable<Ticket> visibleTickets;
 
-    if (simulatedUserRole == "Admin")
+    if (userAccessLevel == "Admin")
     {
         visibleTickets = allTickets;
     }
-    else if (simulatedUserRole == "Employee")
+    else if (userAccessLevel == "Employee")
     {
-        // Simulate employee category access
-        var employeeCategoryMap = new Dictionary<string, List<Category>>
-        {
-            { "6813b6a72ecf1298f30838b7", new List<Category> { Category.Hardware, Category.Account } }
-        };
-
-        var allowedCategories = employeeCategoryMap.ContainsKey(simulatedUserId)
-            ? employeeCategoryMap[simulatedUserId]
-            : new List<Category>();
+        var employee = await _userService.GetUserByEmail(userEmail);
+        var allowedCategories = employee.AssignedCategories
+            .Select(c => Enum.TryParse<Category>(c, out var cat) ? cat : Category.Other)
+            .ToList();
 
         visibleTickets = allTickets.Where(t =>
-            t.Assignee == simulatedUserId &&
+            t.Assignee == employee.Id &&
             allowedCategories.Contains(t.Category));
     }
-    else // User
+    else // Regular user
     {
-        visibleTickets = allTickets.Where(t => t.CreatedBy?.UserId == simulatedUserId);
+        var user = await _userService.GetUserByEmail(userEmail);
+        visibleTickets = allTickets.Where(t => t.CreatedBy?.Id == user.Id);
     }
 
-    return View(visibleTickets.ToList());
+    return View(visibleTickets.ToList()); // ensure it's a List<T>
 }
 
         [HttpGet]
@@ -155,13 +160,4 @@ public async Task<IActionResult> EditTicket(string id, IFormCollection form)
     catch (Exception ex)
     {
         ModelState.AddModelError(string.Empty, $"Error updating ticket: {ex.Message}");
-        return View("Edit", ticketToUpdate); // show the form again with existing data
-    }
-}
-
-
-
-
-
-    }
-}
+        return View("Edit", ticketToU

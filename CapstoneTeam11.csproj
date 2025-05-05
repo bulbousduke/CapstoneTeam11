@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="MongoDB.BSon" Version="2.26.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.25.1" />
   </ItemGroup>
