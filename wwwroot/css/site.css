@@ -2,16 +2,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
-    background-color: #BFBACE;
+    background-color: #E6D6E5;
     font-family: "Atkinson Hyperlegible", sans-serif;
     font-weight: 400;
     font-style: normal;
     text-align: center;
 }
 
-/* a {
+/* general focus indicator style for keyboard navigation */
+:focus-visible {
+    outline: 3px solid #000;
+}
+
+/* focus styles for navbar */
+.navbar-toggler:focus-visible {
+    border-color: #000;
+    outline: 3px solid white;
+    /* box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5); */
+}
+/* .container-fluid:focus-within .navbar-toggler, */
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+}
+.nav-item:focus-within, 
+.navbar-brand:focus-visible {
+    outline: 3px solid white;
+}
+.navbar-brand:focus-visible {
+    /* outline: 2px solid white; */
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+}
+  
+a {
     color: #570052;
-} */
+    text-decoration: underline;
+}
 a:hover {
     /* color: #3B0038; */
     text-decoration: none;
@@ -22,7 +47,8 @@ a:hover {
     margin: 0 auto;
     padding: 25px 30px;
     max-width: 600px;
-    background-color: #E0DDEB;
+    /* background-color: #D8CBD6; */
+    background-color: #D0C7D6;
     border-radius: 25px;
     border: 3px solid #570052;
 }
@@ -38,7 +64,8 @@ label {
     color: #000;
 }
 /* styling for input fields (excluding submit) */
-input[type="text"], input[type="password"] {
+input[type="text"], 
+input[type="password"] {
     padding: 5px;
     width: 100%;
     box-sizing: border-box;
@@ -48,7 +75,7 @@ input[type="text"], input[type="password"] {
 /* styling for submit button */
 input[type="submit"] {
     border-radius: 25px;
-    border: 2px solid #570052;
+    border: 3px solid #570052;
     background-color: #570052;
     color: #fff;
     font-weight: bold;
@@ -56,10 +83,19 @@ input[type="submit"] {
     min-width: 100px;
     height: 35px;
 }
-input[type="submit"]:hover, input[type="submit"]:focus {
-    border: 2px solid #570052;
+input[type="submit"]:hover, 
+input[type="submit"]:focus {
+    border: 3px solid #570052;
     background-color: #538300;
     text-decoration: underline;
+}
+/* focus indicator styles for forms */
+.form-item input:focus-visible {
+    outline: 3px solid #570052;
+}
+input[type="submit"]:focus-visible {
+    outline: 4.5px solid #570052;
+    outline-offset: -3px;
 }
 
 .navbar {

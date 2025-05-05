@@ -24,23 +24,10 @@ a {
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
-
 .navbar-toggler {
     border-color: white;
     background-color: transparent;
 }
-
-.navbar-toggler:focus {
-  border-color: #000;
-  outline: 2px solid white;
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
-}
-/* button:focus,
-.btn:focus {
-  border-color: #000;
-  outline: 2px solid white;
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
-} */
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
@@ -55,9 +42,9 @@ a {
   border-bottom: 1px solid #e5e5e5;
 }
 
-.box-shadow {
+/* .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
+} */
 
 button.accept-policy {
   font-size: 1rem;
