@@ -96,6 +96,26 @@ public async Task<IActionResult> Login(string email, string password, bool remem
     return View();
 }
 
+[Authorize(Roles = "Admin")]
+[HttpGet]
+public async Task<IActionResult> ManageUsers()
+{
+    var users = await _userService.GetAllUsers();
+    return View(users);
+}
+
+[Authorize(Roles = "Admin")]
+[HttpPost]
+public async Task<IActionResult> UpdateUserRole(string userId, AccessLevel newRole)
+{
+    bool updated = await _userService.UpdateAccessLevel(userId, newRole);
+    if (!updated)
+    {
+        TempData["Error"] = "Failed to update user role.";
+    }
+    return RedirectToAction("ManageUsers");
+}
+
         [Authorize]
         public async Task<IActionResult> Logout()
         {

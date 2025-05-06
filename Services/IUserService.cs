@@ -13,4 +13,5 @@ public interface IUserService
     Task Remove(string id);
     bool Register(string name, string email, string password, out string error);
     User? Login(string email, string password);
+    Task<bool> UpdateAccessLevel(string userId, AccessLevel newRole);
 }

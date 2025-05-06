@@ -62,6 +62,16 @@ namespace CapstoneTeam11.Services
         : null;
 }
 
+public async Task<bool> UpdateAccessLevel(string userId, AccessLevel newRole)
+{
+    var user = await GetUserById(userId);
+    if (user == null) return false;
+
+    user.AccessLevel = newRole;
+    await Update(userId, user);
+    return true;
+}
+
 public async Task<User?> GetUserByEmail(string email)
 {
     return await _users.Find(u => u.Email == email).FirstOrDefaultAsync();

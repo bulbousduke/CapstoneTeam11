@@ -40,22 +40,4 @@ namespace CapstoneTeam11.Controllers
                 case "Employee":
                     var categories = user.AssignedCategories
                         .Select(c => Enum.TryParse<Category>(c, out var cat) ? cat : Category.Other)
-                        .ToList();
-
-                    ticketsToShow = allTickets
-                        .Where(t => t.Assignee == user.Id && categories.Contains(t.Category))
-                        .ToList();
-                    break;
-
-                default: // User
-                    ticketsToShow = allTickets
-                        .Where(t => t.CreatedBy?.Id == user.Id)
-                        .ToList();
-                    break;
-            }
-
-            ViewBag.AccessLevel = accessLevel;
-            return View(ticketsToShow);
-        }
-    }
-}
+                        .T
