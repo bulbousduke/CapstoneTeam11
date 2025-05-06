@@ -13,7 +13,8 @@ namespace CapstoneTeam11.Models;
     public string UserId { get; set; }
 
     [BsonElement("AccessLevel")]
-    public AccessLevel AccessLevel { get; set; } //string to enum
+    [BsonRepresentation(BsonType.String)] 
+    public AccessLevel AccessLevel { get; set; }
 
     [BsonElement("Email")]
     public string Email { get; set; }

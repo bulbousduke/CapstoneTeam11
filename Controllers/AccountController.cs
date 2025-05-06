@@ -8,9 +8,11 @@ using System.Security.Claims;
 
 namespace CapstoneTeam11.Controllers
 {
+    
     public class AccountController : Controller
     {
         private readonly IUserService _userService;
+        
 
         public AccountController(IUserService userService)
         {
@@ -18,29 +20,41 @@ namespace CapstoneTeam11.Controllers
         }
 
         // GET: /Account/Register
-        [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
+       [HttpGet]
+public IActionResult Register()
+{
+    return View();
+}
 
-        [HttpPost]
-        public IActionResult Register(string name, string email, string password, string confirmPassword)
-        {
-            if (password != confirmPassword)
-            {
-                ViewBag.Error = "Passwords do not match.";
-                return View();
-            }
 
-            if (_userService.Register(name, email, password, out var error))
-            {
-                return RedirectToAction("Login");
-            }
+[HttpPost]
+public async Task<IActionResult> Register(string name, string email, string password)
+{
+    if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+    {
+        ViewBag.Error = "All fields are required.";
+        return View();
+    }
 
-            ViewBag.Error = error;
-            return View();
-        }
+    if (await _userService.GetUserByEmail(email) != null)
+    {
+        ViewBag.Error = "Email is already registered.";
+        return View();
+    }
+
+    var newUser = new User
+    {
+        Name = name,
+        Email = email,
+        PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
+        AccessLevel = AccessLevel.User,
+        AssignedCategories = new List<string>()
+    };
+
+    await _userService.Create(newUser);
+
+    return RedirectToAction("Login");
+}
 
         // GET: /Account/Login
         [HttpGet]
@@ -92,4 +106,8 @@ public async Task<IActionResult> Login(string email, string password, bool remem
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login");
- 
+        }
+
+        
+    }
+}

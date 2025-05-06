@@ -13,7 +13,7 @@ builder.Services.AddSingleton<IMongoClient>(sp =>
 builder.Services.AddSingleton(sp =>
 {
     var client = sp.GetRequiredService<IMongoClient>();
-    return client.GetDatabase("Ticklr"); // replace with your DB name if different
+    return client.GetDatabase("TICKLR"); // replace with your DB name if different
 });
 
 // Register services

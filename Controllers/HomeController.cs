@@ -4,44 +4,56 @@ using CapstoneTeam11.Models;
 using MongoDB.Driver;
 using CapstoneTeam11.Services;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
-namespace CapstoneTeam11.Controllers;
-
-public class HomeController : Controller
+namespace CapstoneTeam11.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-    private readonly IMongoCollection<User> _users;
-    private readonly UserService _userService;
-    
-    public HomeController(ILogger<HomeController> logger, UserService userService)
+    public class HomeController : Controller
     {
-        _logger = logger;
-        _userService = userService;
+        private readonly ILogger<HomeController> _logger;
+        private readonly UserService _userService;
 
-        // define database and collection variables
         
-      
-    }
 
-    public IActionResult Index()
-    {
-        return View();
+        public HomeController(ILogger<HomeController> logger, UserService userService)
+        {
+            _logger = logger;
+            _userService = userService;
+        }
 
-        // TEST: displaying data from the database
-        // var allUsers = _users.Find(_ => true).ToList(); // get all users
-        // return View(allUsers); // pass data to the view
-    }
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-    public async Task<IActionResult> Privacy()
-    {
-        var allUsers = await _userService.GetAllUsers();
-        return View(allUsers); // pass data to the view
-        // return View();
-    }
+        public async Task<IActionResult> Privacy()
+        {
+            var allUsers = await _userService.GetAllUsers();
+            return View(allUsers);
+        }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        [Authorize]
+        public IActionResult AdminDashboard()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult EmployeeDashboard()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult UserDashboard()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
     }
 }

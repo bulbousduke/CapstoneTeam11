@@ -9,6 +9,7 @@ public interface IUserService
     Task<User?> Create(User user);
     Task<ReplaceOneResult> Update(string id, User user);
     Task<List<User>> GetAllUsers();
+    Task<User?> GetUserByEmail(string email);
     Task Remove(string id);
     bool Register(string name, string email, string password, out string error);
     User? Login(string email, string password);

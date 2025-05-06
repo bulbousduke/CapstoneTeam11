@@ -12,11 +12,8 @@ namespace CapstoneTeam11.Services
 
         public UserService(IMongoDatabase database)
         {
-            _users = database.GetCollection<User>("Users");
+            _users = database.GetCollection<User>("users");
         }
-
-        public async Task<User?> GetUserByEmail(string email) =>
-        await _users.Find(u => u.Email == email).FirstOrDefaultAsync();
 
         public async Task<User?> GetUserById(string id) =>
             await _users.Find(u => u.Id == id).FirstOrDefaultAsync();
@@ -59,4 +56,17 @@ namespace CapstoneTeam11.Services
 
         public User? Login(string email, string password)
 {
-    v
+    var user = _users.Find(u => u.Email == email).FirstOrDefault();
+    return user != null && BCrypt.Net.BCrypt.Verify(password, user.PasswordHash)
+        ? user
+        : null;
+}
+
+public async Task<User?> GetUserByEmail(string email)
+{
+    return await _users.Find(u => u.Email == email).FirstOrDefaultAsync();
+}
+
+    
+    }
+}

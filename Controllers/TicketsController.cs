@@ -160,4 +160,13 @@ public async Task<IActionResult> EditTicket(string id, IFormCollection form)
     catch (Exception ex)
     {
         ModelState.AddModelError(string.Empty, $"Error updating ticket: {ex.Message}");
-        return View("Edit", ticketToU
+        return View("Edit", ticketToUpdate); // show the form again with existing data
+    }
+}
+
+
+
+
+
+    }
+}
