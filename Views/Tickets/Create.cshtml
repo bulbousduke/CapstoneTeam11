@@ -4,24 +4,27 @@
 
 <h2>Create a New Ticket</h2>
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-<form asp-action="CreateTicket" method="post">
+<form asp-action="CreateTicket" method="post" class="form-container">
 
+    <div class="form-item">
+        <label for="Title">Title:</label><br />
+        <input type="text" name="Title" /><br />
+    </div>
+    <div class="form-item"> 
+        <label for="Description">Description:</label><br />
+        <textarea name="Description"></textarea><br />
+    </div>
 
-    <label for="Title">Title:</label><br />
-    <input type="text" name="Title" /><br />
-
-    <label for="Description">Description:</label><br />
-    <textarea name="Description"></textarea><br />
-
-    <label for="Priority">Priority:</label><br />
-        <select id="Priority" name="Priority">
-            <option value="high">High</option>
-            <option value="medium">Medium</option>
-            <option value="low">Low</option>
-        </select><br />
+    <div class="form-item">
+        <label for="Priority">Priority:</label><br />
+            <select id="Priority" name="Priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select><br />
+    </div>
     
-    
-    <input type="submit" value="Create Ticket" class="submit-button" />
+    <input type="submit" value="Create Ticket" id="create-ticket-btn" />
 
     <footer style="margin-top: 40px;">
     <img src="~/images/Asset 2.png" alt="Team Logo" style="width: 120px; height: auto;" />
