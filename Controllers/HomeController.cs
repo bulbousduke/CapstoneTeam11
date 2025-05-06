@@ -40,4 +40,42 @@ namespace CapstoneTeam11.Controllers
                 case "Employee":
                     var categories = user.AssignedCategories
                         .Select(c => Enum.TryParse<Category>(c, out var cat) ? cat : Category.Other)
-                        .T
+                        .ToList();
+
+                    ticketsToShow = allTickets
+                        .Where(t => t.Assignee == user.Id && categories.Contains(t.Category))
+                        .ToList();
+                    break;
+
+                default: // User
+                    ticketsToShow = allTickets
+                        .Where(t => t.CreatedBy?.Id == user.Id)
+                        .ToList();
+                    break;
+            }
+
+            ViewBag.AccessLevel = accessLevel;
+            return View(ticketsToShow);
+        }
+
+        [Authorize(Roles = "Admin")]
+public async Task<IActionResult> ManageUsers()
+{
+    var users = await _userService.GetAllUsers();
+    return View(users);
+}
+
+[HttpPost]
+[Authorize(Roles = "Admin")]
+public async Task<IActionResult> UpdateUserRole(string userId, AccessLevel newRole)
+{
+    var user = await _userService.GetUserById(userId);
+    if (user == null) return NotFound();
+
+    user.AccessLevel = newRole;
+    await _userService.Update(userId, user);
+
+    return RedirectToAction("ManageUsers");
+}
+    }
+}
