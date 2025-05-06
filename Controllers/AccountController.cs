@@ -89,12 +89,7 @@ public async Task<IActionResult> Login(string email, string password, bool remem
         });
 
         // Redirect based on AccessLevel
-        return user.AccessLevel switch
-        {
-            AccessLevel.Admin => RedirectToAction("AdminDashboard", "Home"),
-            AccessLevel.Employee => RedirectToAction("EmployeeDashboard", "Home"),
-            _ => RedirectToAction("UserDashboard", "Home")
-        };
+        return RedirectToAction("Index", "Home");
     }
 
     ViewBag.Error = "Invalid email or password.";

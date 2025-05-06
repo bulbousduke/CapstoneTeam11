@@ -18,7 +18,9 @@ builder.Services.AddSingleton(sp =>
 
 // Register services
 builder.Services.AddSingleton<IUserService, UserService>();
+builder.Services.AddSingleton<UserService>();
 builder.Services.AddSingleton<TicketService>();
+builder.Services.AddHttpContextAccessor();
 
 // Add authentication
 builder.Services.AddAuthentication("MyCookieAuth")

@@ -1,59 +1,61 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using CapstoneTeam11.Models;
-using MongoDB.Driver;
-using CapstoneTeam11.Services;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+using CapstoneTeam11.Services;
+using CapstoneTeam11.Models;
 
 namespace CapstoneTeam11.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly UserService _userService;
+        private readonly TicketService _ticketService;
+        private readonly IUserService _userService;
 
-        
-
-        public HomeController(ILogger<HomeController> logger, UserService userService)
+        public HomeController(TicketService ticketService, IUserService userService)
         {
-            _logger = logger;
+            _ticketService = ticketService;
             _userService = userService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }
+            var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+            var accessLevel = User.FindFirst("AccessLevel")?.Value;
 
-        public async Task<IActionResult> Privacy()
-        {
-            var allUsers = await _userService.GetAllUsers();
-            return View(allUsers);
-        }
+            if (string.IsNullOrEmpty(userEmail) || string.IsNullOrEmpty(accessLevel))
+                return RedirectToAction("Login", "Account");
 
-        [Authorize]
-        public IActionResult AdminDashboard()
-        {
-            return View();
-        }
+            var allTickets = await _ticketService.GetAllTickets();
+            var user = await _userService.GetUserByEmail(userEmail);
 
-        [Authorize]
-        public IActionResult EmployeeDashboard()
-        {
-            return View();
-        }
+            List<Ticket> ticketsToShow;
 
-        [Authorize]
-        public IActionResult UserDashboard()
-        {
-            return View();
-        }
+            switch (accessLevel)
+            {
+                case "Admin":
+                    ticketsToShow = allTickets; // Admins see all
+                    break;
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+                case "Employee":
+                    var categories = user.AssignedCategories
+                        .Select(c => Enum.TryParse<Category>(c, out var cat) ? cat : Category.Other)
+                        .ToList();
+
+                    ticketsToShow = allTickets
+                        .Where(t => t.Assignee == user.Id && categories.Contains(t.Category))
+                        .ToList();
+                    break;
+
+                default: // User
+                    ticketsToShow = allTickets
+                        .Where(t => t.CreatedBy?.Id == user.Id)
+                        .ToList();
+                    break;
+            }
+
+            ViewBag.AccessLevel = accessLevel;
+            return View(ticketsToShow);
         }
     }
 }
