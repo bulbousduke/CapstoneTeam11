@@ -70,9 +70,9 @@ namespace CapstoneTeam11.Controllers
                     .Select(c => Enum.TryParse<Category>(c, out var cat) ? cat : Category.Other)
                     .ToList();
 
-                visibleTickets = allTickets.Where(t =>
-                    t.Assignee == employee.Id &&
-                    allowedCategories.Contains(t.Category));
+                visibleTickets = allTickets
+                    .Where(t => allowedCategories.Contains(t.Category))
+                    .ToList();
             }
             else
             {
