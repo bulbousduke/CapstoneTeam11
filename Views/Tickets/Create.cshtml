@@ -4,31 +4,33 @@
     ViewData["Title"] = "Create New Ticket";
 }
 
-<h2>Create a New Ticket</h2>
-<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-<form asp-action="CreateTicket" method="post" class="form-container">
+<h1>@ViewData["Title"]</h1>
 
-    <div class="form-item">
-        <label for="Title">Title:</label><br />
-        <input type="text" name="Title" /><br />
-    </div>
+<form asp-controller="Ticket" asp-action="Create" method="post" class="form-container">
+    
     <div class="form-item"> 
-        <label for="Description">Description:</label><br />
-        <textarea name="Description"></textarea><br />
+        <label asp-for="Description">Description:</label><br />
+        <textarea asp-for="Description"></textarea><br />
+        <span asp-validation-for="Description" class="text-danger"></span>
     </div>
 
     <div class="form-item">
-        <label for="Priority">Priority:</label><br />
-            <select id="Priority" name="Priority">
-                <option value="high">High</option>
-                <option value="medium">Medium</option>
-                <option value="low">Low</option>
+        <label asp-for="Category">Category</label>
+        <select asp-for="Category" asp-items="Html.GetEnumSelectList<Category>()">
+            <option value="">-- Select Category --</option>
+        </select>
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+
+    <div class="form-item">
+        <label asp-for="Priority">Priority:</label><br />
+            <select asp-for="Priority" asp-items="Html.GetEnumSelectList<Priority>()">
+                <option value="">-- Select Priority --</option>
             </select><br />
     </div>
     
     <input type="submit" value="Create Ticket" id="create-ticket-btn" />
 
-    <button type="submit" class="btn btn-primary mt-3">Create Ticket</button>
 </form>
 
 @section Scripts {

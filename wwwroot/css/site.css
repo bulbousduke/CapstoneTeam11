@@ -67,6 +67,7 @@ label {
 input[type="text"], 
 input[type="password"],
 input[type="select"],
+input[type="email"],
 textarea {
     padding: 5px;
     width: 100%;
@@ -95,6 +96,10 @@ input[type="submit"]:focus {
 #create-ticket-btn {
     min-width: 200px;
 }
+/* styling for checkbox */
+input[type="checkbox"] {
+    accent-color: #570052;
+}  
 
 /* focus indicator styles for forms */
 .form-item input:focus-visible,
@@ -105,6 +110,10 @@ input[type="submit"]:focus {
 input[type="submit"]:focus-visible {
     outline: 4.5px solid #570052;
     outline-offset: -3px;
+}
+input[type="checkbox"]:focus-visible {
+    outline: 3px solid #570052;
+    outline-offset: 1.5px;
 }
 
 /* navbar styling */
