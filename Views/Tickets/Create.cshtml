@@ -1,5 +1,7 @@
+@model CapstoneTeam11.Models.Ticket
+
 @{
-    ViewData["Title"] = "Create Ticket";
+    ViewData["Title"] = "Create New Ticket";
 }
 
 <h2>Create a New Ticket</h2>
@@ -26,8 +28,9 @@
     
     <input type="submit" value="Create Ticket" id="create-ticket-btn" />
 
-    <footer style="margin-top: 40px;">
-    <img src="~/images/Asset 2.png" alt="Team Logo" style="width: 120px; height: auto;" />
-</footer>
-
+    <button type="submit" class="btn btn-primary mt-3">Create Ticket</button>
 </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

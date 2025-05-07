@@ -1,9 +1,7 @@
-using CapstoneTeam11.Models;
 using MongoDB.Driver;
+using CapstoneTeam11.Models;
 using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
 using MongoDB.Bson;
-using Microsoft.AspNetCore.Mvc;
 
 namespace CapstoneTeam11.Services
 {
@@ -19,26 +17,25 @@ namespace CapstoneTeam11.Services
             _ticketCollection = database.GetCollection<Ticket>("tickets");
         }
 
+        public async Task<List<Ticket>> GetAllTickets()
+        {
+            return await _ticketCollection.Find(t => true).ToListAsync();
+        }
+
         public async Task<Ticket?> GetTicketById(string id)
         {
             return await _ticketCollection.Find(t => t.Id == id).FirstOrDefaultAsync();
         }
 
-        public async Task<ReplaceOneResult> Update(string id, Ticket updatedTicket)
+        public async Task<Ticket?> Create(Ticket ticket) // <-- Added this Create method
         {
-            return await _ticketCollection.ReplaceOneAsync(ticket => ticket.Id == id, updatedTicket);
-        }
-
-        public async Task<Ticket?> Create(Ticket ticket)
-        {
-            ticket.Id = ObjectId.GenerateNewId().ToString();
             await _ticketCollection.InsertOneAsync(ticket);
             return ticket;
         }
 
-        public async Task<List<Ticket>> GetAllTickets()
+        public async Task<ReplaceOneResult> Update(string id, Ticket updatedTicket)
         {
-            return await _ticketCollection.Find(t => true).ToListAsync();
+            return await _ticketCollection.ReplaceOneAsync(t => t.Id == id, updatedTicket);
         }
 
         public async Task Remove(string id)

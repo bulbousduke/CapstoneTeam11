@@ -1,52 +1,81 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using CapstoneTeam11.Models;
-using MongoDB.Driver;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 using CapstoneTeam11.Services;
-using System.Threading.Tasks;
+using CapstoneTeam11.Models;
 
 namespace CapstoneTeam11.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly IMongoCollection<User> _users;
-        private readonly UserService _userService;
-        
-        public HomeController(ILogger<HomeController> logger, UserService userService)
+        private readonly TicketService _ticketService;
+        private readonly IUserService _userService;
+
+        public HomeController(TicketService ticketService, IUserService userService)
         {
-            _logger = logger;
+            _ticketService = ticketService;
             _userService = userService;
-
-            // define database and collection variables
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+            var accessLevel = User.FindFirst("AccessLevel")?.Value;
 
-            // TEST: displaying data from the database
-            // var allUsers = _users.Find(_ => true).ToList(); // get all users
-            // return View(allUsers); // pass data to the view
+            if (string.IsNullOrEmpty(userEmail) || string.IsNullOrEmpty(accessLevel))
+                return RedirectToAction("Login", "Account");
+
+            var allTickets = await _ticketService.GetAllTickets();
+            var user = await _userService.GetUserByEmail(userEmail);
+
+            List<Ticket> ticketsToShow;
+
+            switch (accessLevel)
+            {
+                case "Admin":
+                    ticketsToShow = allTickets; // Admins see all
+                    break;
+
+                case "Employee":
+                    var categories = user.AssignedCategories
+                        .Select(c => Enum.TryParse<Category>(c, out var cat) ? cat : Category.Other)
+                        .ToList();
+
+                    ticketsToShow = allTickets
+                        .Where(t => t.Assignee == user.Id && categories.Contains(t.Category))
+                        .ToList();
+                    break;
+
+                default: // User
+                    ticketsToShow = allTickets
+                        .Where(t => t.CreatedBy?.Id == user.Id)
+                        .ToList();
+                    break;
+            }
+
+            ViewBag.AccessLevel = accessLevel;
+            return View(ticketsToShow);
         }
 
-        public async Task<IActionResult> Privacy()
-        {
-            var allUsers = await _userService.GetAllUsers();
-            return View(allUsers); // pass data to the view
-            // return View();
-        }
+        [Authorize(Roles = "Admin")]
+public async Task<IActionResult> ManageUsers()
+{
+    var users = await _userService.GetAllUsers();
+    return View(users);
+}
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+[HttpPost]
+[Authorize(Roles = "Admin")]
+public async Task<IActionResult> UpdateUserRole(string userId, AccessLevel newRole)
+{
+    var user = await _userService.GetUserById(userId);
+    if (user == null) return NotFound();
 
-        // Correct placement of Help method inside HomeController class
-        public IActionResult Help()
-        {
-            return View(); // returns the Help view
-        }
+    user.AccessLevel = newRole;
+    await _userService.Update(userId, user);
+
+    return RedirectToAction("ManageUsers");
+}
     }
 }

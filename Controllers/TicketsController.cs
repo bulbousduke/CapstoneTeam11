@@ -1,87 +1,172 @@
-using System.Threading.Tasks;
 using CapstoneTeam11.Models;
 using CapstoneTeam11.Services;
 using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson;
+using MongoDB.Bson; 
+using System.Security.Claims;
 
-namespace CapstoneTeam11.Controllers;
-public class TicketsController : Controller
+namespace CapstoneTeam11.Controllers
 {
-    private readonly TicketService _ticketService;
-
-    public TicketsController(TicketService ticketService)
+    public class TicketsController : Controller
     {
-        _ticketService = ticketService;
-    }
+        
+        private readonly TicketService _ticketService;
+        private readonly UserService _userService;
 
-    [HttpGet]
-    public IActionResult Create()
-    {
-        return View(); // Shows the form
-    }
 
-    [HttpPost]
-    public async Task<IActionResult> CreateTicket(IFormCollection form)
-    {
-        var admin = new User()
+        public TicketsController(TicketService ticketService, UserService userService)
         {
-            AccessLevel = AccessLevel.User,
-            Email = "bburger@gmail.com",
-            Password = "burger123",
-            Name = "Bob Burger"
-        };
-
-        var ticket = new Ticket()
-        {
-            Category = Category.Hardware,
-            CreatedDate = DateTime.Now,
-            CreatedBy = admin,
-            IsCompleted = false,
-            Description = "Charging port not working for laptop",
-            Priority = Priority.Medium
-        };
-
-        // var note = form["JournalNotes"];
-        // if (!string.IsNullOrWhiteSpace(note))
-        // {
-        //     ticket.JournalNotes.Add(note);
-        // }
-
-        await _ticketService.Create(ticket);
-        return RedirectToAction("Manage");
-    }
-
-    [HttpGet]
-    public IActionResult Manage(string id)
-    {
-        var ticket = _ticketService.GetTicketById(id);
-        if (ticket == null)
-        {
-            return NotFound();
+            _ticketService = ticketService;
+            _userService = userService;
         }
 
-        return View(ticket); // This shows the edit/manage form
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+public async Task<IActionResult> Create(IFormCollection form)
+
+{
+    var ticket = new Ticket
+    {
+        Description = form["Description"],
+        Category = Enum.TryParse<Category>(form["Category"], out var category) ? category : Category.Other,
+        Priority = Enum.TryParse<Priority>(form["Priority"], out var priority) ? priority : Priority.Low,
+        CreatedDate = DateTime.UtcNow,
+        IsCompleted = false,
+        CreatedBy = new User
+        {
+            UserId = ObjectId.GenerateNewId().ToString(),
+            AccessLevel = AccessLevel.User, //string to enum
+            Email = "admin@example.com",
+            PasswordHash = "admin123",
+            Name = "Admin User"
+        },
+        Assignee = null, 
+        JournalNotes = new List<string>()
+    };
+
+    await _ticketService.Create(ticket);
+
+    return RedirectToAction("ViewPast");
+}
+
+       [HttpGet]
+[HttpGet]
+public async Task<IActionResult> ViewPast()
+{
+    var allTickets = await _ticketService.GetAllTickets();
+    var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+    var userAccessLevel = User.FindFirst("AccessLevel")?.Value;
+
+    if (userEmail == null || userAccessLevel == null)
+        return Unauthorized();
+
+    IEnumerable<Ticket> visibleTickets;
+
+    if (userAccessLevel == "Admin")
+    {
+        visibleTickets = allTickets;
+    }
+    else if (userAccessLevel == "Employee")
+    {
+        var employee = await _userService.GetUserByEmail(userEmail);
+        var allowedCategories = employee.AssignedCategories
+            .Select(c => Enum.TryParse<Category>(c, out var cat) ? cat : Category.Other)
+            .ToList();
+
+        visibleTickets = allTickets.Where(t =>
+            t.Assignee == employee.Id &&
+            allowedCategories.Contains(t.Category));
+    }
+    else // Regular user
+    {
+        var user = await _userService.GetUserByEmail(userEmail);
+        visibleTickets = allTickets.Where(t => t.CreatedBy?.Id == user.Id);
     }
 
-    // [HttpPost]
-    // public IActionResult Manage(ObjectId id, IFormCollection form)
-    // {
-    //     // var updatedTicket = new TicketModel
-    //     // {
-    //     //     Title = form["Title"],
-    //     //     Description = form["Description"],
-    //     //     Status = form["Status"],
-    //     //     CreatedDate = DateTime.UtcNow, // Optional: get original timestamp if desired
-    //     //     JournalNotes = new List<string> { form["JournalNotes"] }
-    //     // };
+    return View(visibleTickets.ToList()); // ensure it's a List<T>
+}
 
-    //     // _ticketService.UpdateTicket(id, updatedTicket);
-    //     // return RedirectToAction("Manage"); // Go back to list
-    // }
+        [HttpGet]
+        public async Task<IActionResult> Manage(string id)
+        {
+            var ticket = await _ticketService.GetTicketById(id);
+            if (ticket == null)
+            {
+                return NotFound();
+            }
+            return View(ticket);
+        }
 
-    public IActionResult ViewPast()
+// GET: Tickets/Edit/{id}
+[HttpGet]
+public async Task<IActionResult> EditTicket(string id)
+{
+    if (string.IsNullOrEmpty(id))
     {
-        var tickets = _ticketService.GetAllTickets();
-        return View(tickets);
+        return NotFound();
+    }
+
+    var ticket = await _ticketService.GetTicketById(id);
+    if (ticket == null)
+    {
+        return NotFound();
+    }
+
+    return View("Edit", ticket); // Pass ticket to Edit.cshtml
+}
+
+// POST: Tickets/Edit/{id}
+[HttpPost]
+public async Task<IActionResult> EditTicket(string id, IFormCollection form)
+{
+    if (string.IsNullOrEmpty(id))
+    {
+        return NotFound();
+    }
+
+    var ticketToUpdate = await _ticketService.GetTicketById(id);
+    if (ticketToUpdate == null)
+    {
+        return NotFound();
+    }
+
+    try
+    {
+        ticketToUpdate.Description = form["Description"];
+        
+        // Safely parse Category
+        if (Enum.TryParse(form["Category"], out Category parsedCategory))
+        {
+            ticketToUpdate.Category = parsedCategory;
+        }
+
+        ticketToUpdate.Priority = Enum.TryParse<Priority>(form["Priority"], out var parsedPriority) ? parsedPriority : ticketToUpdate.Priority;
+        
+        // Checkbox returns "true" or not present
+        ticketToUpdate.IsCompleted = form["IsCompleted"].FirstOrDefault() == "true";
+
+        ticketToUpdate.Assignee = form["Assignee"];
+
+        // You could add journal notes later (not here unless you build a bigger editor)
+
+        await _ticketService.Update(id, ticketToUpdate);
+
+        return RedirectToAction("ViewPast"); // after saving, go back to view tickets
+    }
+    catch (Exception ex)
+    {
+        ModelState.AddModelError(string.Empty, $"Error updating ticket: {ex.Message}");
+        return View("Edit", ticketToUpdate); // show the form again with existing data
+    }
+}
+
+
+
+
+
     }
 }

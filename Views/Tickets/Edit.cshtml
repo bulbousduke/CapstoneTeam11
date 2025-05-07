@@ -1,0 +1,41 @@
+@model CapstoneTeam11.Models.Ticket
+
+<h2>Edit Ticket</h2>
+
+<form asp-action="EditTicket" asp-controller="Tickets" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+    </div>
+
+    <div>
+        <label asp-for="Category"></label>
+        <select asp-for="Category" class="form-control">
+            @foreach (var category in Enum.GetValues(typeof(CapstoneTeam11.Category)))            {
+                <option value="@category" selected="@(Model.Category == (CapstoneTeam11.Category)category)">
+                    @category
+                </option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <label asp-for="Priority"></label>
+        <select asp-for="Priority" class="form-control">
+            @foreach (var priority in Enum.GetValues(typeof(CapstoneTeam11.Priority)))            {
+                <option value="@priority" selected="@(Model.Priority == (CapstoneTeam11.Priority)priority)">
+                    @priority
+                </option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <label asp-for="IsCompleted"></label>
+        <input asp-for="IsCompleted" type="checkbox" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

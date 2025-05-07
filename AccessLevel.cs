@@ -1,4 +1,4 @@
-namespace CapstoneTeam11;
+namespace CapstoneTeam11.Models;
 
 public enum AccessLevel 
 {
