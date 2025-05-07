@@ -9,15 +9,14 @@ namespace CapstoneTeam11.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        private readonly TicketService _ticketService;
         private readonly IUserService _userService;
+        private readonly ITicketService _ticketService;
 
-        public HomeController(TicketService ticketService, IUserService userService)
+        public HomeController(ITicketService ticketService, IUserService userService)
         {
             _ticketService = ticketService;
             _userService = userService;
         }
-
         public async Task<IActionResult> Index()
         {
             var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;

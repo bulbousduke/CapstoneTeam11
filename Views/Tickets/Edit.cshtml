@@ -1,41 +1,27 @@
-@model CapstoneTeam11.Models.Ticket
+<div class="card">
+    <h2>Ticket Analytics</h2>
+    <p>Total Tickets: @ViewBag.TotalTickets</p>
+    <p>Open Tickets: @ViewBag.OpenTickets</p>
+    <p>Closed Tickets: @ViewBag.ClosedTickets</p>
 
-<h2>Edit Ticket</h2>
+    <h3>Tickets by Category</h3>
+    <ul>
+        @foreach (var item in (Dictionary<string, int>)ViewBag.TicketsByCategory)
+        {
+            <li>@item.Key: @item.Value</li>
+        }
+    </ul>
+</div>
 
-<form asp-action="EditTicket" asp-controller="Tickets" method="post">
-    <input type="hidden" asp-for="Id" />
+<div class="card mt-4">
+    <h2>User Analytics</h2>
+    <p>Total Users: @ViewBag.TotalUsers</p>
 
-    <div>
-        <label asp-for="Description"></label>
-        <input asp-for="Description" class="form-control" />
-    </div>
-
-    <div>
-        <label asp-for="Category"></label>
-        <select asp-for="Category" class="form-control">
-            @foreach (var category in Enum.GetValues(typeof(CapstoneTeam11.Category)))            {
-                <option value="@category" selected="@(Model.Category == (CapstoneTeam11.Category)category)">
-                    @category
-                </option>
-            }
-        </select>
-    </div>
-
-    <div>
-        <label asp-for="Priority"></label>
-        <select asp-for="Priority" class="form-control">
-            @foreach (var priority in Enum.GetValues(typeof(CapstoneTeam11.Priority)))            {
-                <option value="@priority" selected="@(Model.Priority == (CapstoneTeam11.Priority)priority)">
-                    @priority
-                </option>
-            }
-        </select>
-    </div>
-
-    <div>
-        <label asp-for="IsCompleted"></label>
-        <input asp-for="IsCompleted" type="checkbox" />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Save</button>
-</form>
+    <h3>Users by Role</h3>
+    <ul>
+        @foreach (var role in (Dictionary<string, int>)ViewBag.UsersByRole)
+        {
+            <li>@role.Key: @role.Value</li>
+        }
+    </ul>
+</div>

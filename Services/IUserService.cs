@@ -14,4 +14,6 @@ public interface IUserService
     bool Register(string name, string email, string password, out string error);
     User? Login(string email, string password);
     Task<bool> UpdateAccessLevel(string userId, AccessLevel newRole);
+    int GetTotalUsers();
+    Dictionary<string, int> GetUsersByAccessLevel();
 }

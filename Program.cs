@@ -17,10 +17,11 @@ builder.Services.AddSingleton(sp =>
 });
 
 // Register services
-builder.Services.AddSingleton<IUserService, UserService>();
-builder.Services.AddSingleton<UserService>();
-builder.Services.AddSingleton<TicketService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ITicketService, TicketService>();
+
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddControllersWithViews();
 
 // Add authentication
 builder.Services.AddAuthentication("MyCookieAuth")
