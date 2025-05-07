@@ -76,5 +76,11 @@ public async Task<IActionResult> UpdateUserRole(string userId, AccessLevel newRo
 
     return RedirectToAction("ManageUsers");
 }
+
+[HttpGet]
+public IActionResult Help()
+{
+    return View();
+}
     }
 }

@@ -1,27 +1,45 @@
-<div class="card">
-    <h2>Ticket Analytics</h2>
-    <p>Total Tickets: @ViewBag.TotalTickets</p>
-    <p>Open Tickets: @ViewBag.OpenTickets</p>
-    <p>Closed Tickets: @ViewBag.ClosedTickets</p>
+@model CapstoneTeam11.Models.Ticket
 
-    <h3>Tickets by Category</h3>
-    <ul>
-        @foreach (var item in (Dictionary<string, int>)ViewBag.TicketsByCategory)
-        {
-            <li>@item.Key: @item.Value</li>
-        }
-    </ul>
-</div>
+@{
+    ViewData["Title"] = "Edit Ticket";
+}
 
-<div class="card mt-4">
-    <h2>User Analytics</h2>
-    <p>Total Users: @ViewBag.TotalUsers</p>
+<h1>Edit Ticket</h1>
 
-    <h3>Users by Role</h3>
-    <ul>
-        @foreach (var role in (Dictionary<string, int>)ViewBag.UsersByRole)
-        {
-            <li>@role.Key: @role.Value</li>
-        }
-    </ul>
-</div>
+<form asp-action="EditTicket" asp-route-id="@Model.Id" method="post">
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Category" class="control-label"></label>
+        <select asp-for="Category" class="form-control" asp-items="Html.GetEnumSelectList<Category>()"></select>
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Priority" class="control-label"></label>
+        <select asp-for="Priority" class="form-control" asp-items="Html.GetEnumSelectList<Priority>()"></select>
+        <span asp-validation-for="Priority" class="text-danger"></span>
+    </div>
+
+    <div class="form-group form-check">
+        <input asp-for="IsCompleted" class="form-check-input" />
+        <label asp-for="IsCompleted" class="form-check-label"></label>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Assignee" class="control-label"></label>
+        <input asp-for="Assignee" class="form-control" />
+        <span asp-validation-for="Assignee" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-action="ViewPast" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

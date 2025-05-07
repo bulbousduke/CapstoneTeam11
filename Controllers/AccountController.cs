@@ -127,8 +127,9 @@ namespace CapstoneTeam11.Controllers
         [Authorize]
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Login");
+            await HttpContext.SignOutAsync("MyCookieAuth");
+            TempData["LogoutMessage"] = "You have been signed out successfully.";
+            return RedirectToAction("Login", "Account");
         }
     }
 }

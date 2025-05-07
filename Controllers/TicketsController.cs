@@ -134,7 +134,7 @@ namespace CapstoneTeam11.Controllers
             ViewBag.TotalUsers = _userService.GetTotalUsers();
             ViewBag.UsersByRole = _userService.GetUsersByAccessLevel();
 
-            return View("Edit"); // Looks for Views/Tickets/Manage.cshtml
+            return View("Manage"); // Looks for Views/Tickets/Manage.cshtml
         }
     }
 }
