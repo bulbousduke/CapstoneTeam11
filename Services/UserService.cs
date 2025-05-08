@@ -77,6 +77,17 @@ public async Task<User?> GetUserByEmail(string email)
     return await _users.Find(u => u.Email == email).FirstOrDefaultAsync();
 }
 
+public int GetTotalUsers()
+{
+    return (int)_users.AsQueryable().Count();
+}
+
+public Dictionary<string, int> GetUsersByAccessLevel()
+{
+    return _users.AsQueryable()
+        .GroupBy(u => u.AccessLevel)
+        .ToDictionary(g => g.Key.ToString(), g => g.Count());
+}
     
     }
 }

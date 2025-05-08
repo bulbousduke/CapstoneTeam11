@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using System.Text.RegularExpressions;
+
 
 namespace CapstoneTeam11.Controllers
 {
@@ -30,6 +32,17 @@ namespace CapstoneTeam11.Controllers
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
                 ViewBag.Error = "All fields are required.";
+                return View();
+            }
+            if (password.Length < 8 || password.Length > 64)
+            {
+                ViewBag.Error = "Password must be between 8 and 64 characters.";
+                return View();
+            }
+                
+            if (!Regex.IsMatch(password, @"\d"))
+            {
+                ViewBag.Error = "Password must include at least one number.";
                 return View();
             }
 
@@ -114,8 +127,9 @@ namespace CapstoneTeam11.Controllers
         [Authorize]
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Login");
+            await HttpContext.SignOutAsync("MyCookieAuth");
+            TempData["LogoutMessage"] = "You have been signed out successfully.";
+            return RedirectToAction("Login", "Account");
         }
     }
 }

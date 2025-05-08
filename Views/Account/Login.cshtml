@@ -9,6 +9,13 @@
     <a asp-controller="Account" asp-action="Register">Register for an account.</a>
 </p>
 
+@if (TempData["LogoutMessage"] != null)
+{
+    <div style="color: green; font-weight: bold;">
+        @TempData["LogoutMessage"]
+    </div>
+}
+
 @if (ViewBag.Error != null)
 {
     <div style="color:red">@ViewBag.Error</div>
@@ -20,13 +27,24 @@
         <input type="email" name="Email" id="Email" required 
                list="previousEmails" autocomplete="username" />
         <datalist id="previousEmails">
-            @if (ViewBag.PreviousEmails != null)
-    {
-        foreach (var email in ViewBag.PreviousEmails as List<string>)
-        {
-            <option value="@email"></option>
-        }
-    }
+            @* reworked display to address "possible null reference" errors *@
+            @{
+                var previousEmails = ViewBag.PreviousEmails as List<string>;
+                if (previousEmails != null)
+                {
+                    foreach (var email in previousEmails)
+                    {
+                        <option value="@email"></option>
+                    }
+                }
+            }
+            @* @if (ViewBag.PreviousEmails != null)
+            {
+                foreach (var email in ViewBag.PreviousEmails as List<string>)
+                {
+                    <option value="@email"></option>
+                }
+            } *@
         </datalist>
     </div>
     <div class="form-item">

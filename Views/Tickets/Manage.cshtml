@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Manage Tickets";
+}
+
+<div class="card">
+    <h2>Ticket Analytics</h2>
+    <p>Total Tickets: @ViewBag.TotalTickets</p>
+    <p>Open Tickets: @ViewBag.OpenTickets</p>
+    <p>Closed Tickets: @ViewBag.ClosedTickets</p>
+
+    <h3>Tickets by Category</h3>
+    <ul>
+        @foreach (var item in (Dictionary<string, int>)ViewBag.TicketsByCategory)
+        {
+            <li>@item.Key: @item.Value</li>
+        }
+    </ul>
+</div>
+
+<div class="card mt-4">
+    <h2>User Analytics</h2>
+    <p>Total Users: @ViewBag.TotalUsers</p>
+
+    <h3>Users by Role</h3>
+    <ul>
+        @foreach (var role in (Dictionary<string, int>)ViewBag.UsersByRole)
+        {
+            <li>@role.Key: @role.Value</li>
+        }
+    </ul>
+</div>

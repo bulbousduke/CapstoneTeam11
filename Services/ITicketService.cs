@@ -11,4 +11,7 @@ public interface ITicketService
     Task<List<Ticket>> GetAllTickets();
     Task<ReplaceOneResult> Update(string id, Ticket ticket);
     Task Remove(string id);
+    int GetTotalTickets();
+    (int open, int closed) GetOpenClosedTicketCounts();
+    Dictionary<string, int> GetTicketsByCategory();
 }

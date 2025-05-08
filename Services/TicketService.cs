@@ -42,5 +42,24 @@ namespace CapstoneTeam11.Services
         {
             await _ticketCollection.DeleteOneAsync(t => t.Id == id);
         }
+
+        public int GetTotalTickets()
+        {
+            return (int)_ticketCollection.AsQueryable().Count();
+        }
+
+        public (int open, int closed) GetOpenClosedTicketCounts()
+        {
+            var open = (int)_ticketCollection.AsQueryable().Count(t => !t.IsCompleted);
+var closed = (int)_ticketCollection.AsQueryable().Count(t => t.IsCompleted);
+            return (open, closed);
+        }
+
+        public Dictionary<string, int> GetTicketsByCategory()
+        {
+            return _ticketCollection.AsQueryable()
+            .GroupBy(t => t.Category.ToString())
+            .ToDictionary(g => g.Key, g => g.Count());
+        }
     }
 }

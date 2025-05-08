@@ -9,15 +9,14 @@ namespace CapstoneTeam11.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        private readonly TicketService _ticketService;
         private readonly IUserService _userService;
+        private readonly ITicketService _ticketService;
 
-        public HomeController(TicketService ticketService, IUserService userService)
+        public HomeController(ITicketService ticketService, IUserService userService)
         {
             _ticketService = ticketService;
             _userService = userService;
         }
-
         public async Task<IActionResult> Index()
         {
             var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
@@ -38,9 +37,17 @@ namespace CapstoneTeam11.Controllers
                     break;
 
                 case "Employee":
-                    var categories = user.AssignedCategories
+                    if (user == null) // null check to solve possible null reference error
+                        return RedirectToAction("Login", "Account");
+                    
+                    List<Category> categories = new List<Category>();
+                    
+                    if (user.AssignedCategories != null)
+                    {
+                        categories = user.AssignedCategories
                         .Select(c => Enum.TryParse<Category>(c, out var cat) ? cat : Category.Other)
                         .ToList();
+                    }
 
                     ticketsToShow = allTickets
                         .Where(t => t.Assignee == user.Id && categories.Contains(t.Category))
@@ -48,6 +55,9 @@ namespace CapstoneTeam11.Controllers
                     break;
 
                 default: // User
+                    if (user == null) // null check to solve possible null reference error
+                        return RedirectToAction("Login", "Account");
+
                     ticketsToShow = allTickets
                         .Where(t => t.CreatedBy?.Id == user.Id)
                         .ToList();
@@ -76,6 +86,12 @@ public async Task<IActionResult> UpdateUserRole(string userId, AccessLevel newRo
     await _userService.Update(userId, user);
 
     return RedirectToAction("ManageUsers");
+}
+
+[HttpGet]
+public IActionResult Help()
+{
+    return View();
 }
     }
 }
