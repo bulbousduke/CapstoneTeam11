@@ -20,51 +20,48 @@ namespace CapstoneTeam11.Controllers
         }
 
         // GET: /Account/Register
-        [HttpGet]
-        public IActionResult Register()
+        [HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Register(string name, string email, string password)
+{
+    try
+    {
+        if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
         {
+            ViewBag.Error = "All fields are required.";
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Register(string name, string email, string password)
+        if (password.Length < 8 || password.Length > 64 || !Regex.IsMatch(password, @"\d"))
         {
-            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
-            {
-                ViewBag.Error = "All fields are required.";
-                return View();
-            }
-            if (password.Length < 8 || password.Length > 64)
-            {
-                ViewBag.Error = "Password must be between 8 and 64 characters.";
-                return View();
-            }
-                
-            if (!Regex.IsMatch(password, @"\d"))
-            {
-                ViewBag.Error = "Password must include at least one number.";
-                return View();
-            }
-
-            if (await _userService.GetUserByEmail(email) != null)
-            {
-                ViewBag.Error = "Email is already registered.";
-                return View();
-            }
-
-            var newUser = new User
-            {
-                Name = name,
-                Email = email,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
-                AccessLevel = AccessLevel.User,
-                AssignedCategories = new List<string>()
-            };
-
-            await _userService.Create(newUser);
-
-            return RedirectToAction("Login");
+            ViewBag.Error = "Password must be 8–64 chars and include a number.";
+            return View();
         }
+
+        if (await _userService.GetUserByEmail(email) != null)
+        {
+            ViewBag.Error = "Email is already registered.";
+            return View();
+        }
+
+        var newUser = new User
+        {
+            Name = name,
+            Email = email,
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
+            AccessLevel = AccessLevel.User,
+            AssignedCategories = new List<string>()
+        };
+
+        await _userService.Create(newUser);
+        return RedirectToAction("Login");
+    }
+    catch (Exception ex)
+    {
+        ViewBag.Error = $"Registration error: {ex.Message}";
+        return View();
+    }
+}
 
         // GET: /Account/Login
         [HttpGet]
@@ -79,33 +76,39 @@ namespace CapstoneTeam11.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(string email, string password, bool rememberMe)
-        {
-            var user = _userService.Login(email, password); // ← Is this returning null?
-
-    if (user != null)
+{
+    try
     {
-        var claims = new List<Claim>
+        var user = _userService.Login(email, password);
+        if (user != null)
         {
-            new(ClaimTypes.Name, user.Name),
-            new(ClaimTypes.Email, user.Email),
-            new("AccessLevel", user.AccessLevel.ToString())
-        };
+            var claims = new List<Claim>
+            {
+                new(ClaimTypes.Name, user.Name),
+                new(ClaimTypes.Email, user.Email),
+                new("AccessLevel", user.AccessLevel.ToString())
+            };
 
-        var identity = new ClaimsIdentity(claims, "MyCookieAuth");
-        var principal = new ClaimsPrincipal(identity);
+            var identity = new ClaimsIdentity(claims, "MyCookieAuth");
+            var principal = new ClaimsPrincipal(identity);
 
-        await HttpContext.SignInAsync("MyCookieAuth", principal, new AuthenticationProperties
-        {
-            IsPersistent = rememberMe
-        });
+            await HttpContext.SignInAsync("MyCookieAuth", principal, new AuthenticationProperties
+            {
+                IsPersistent = rememberMe
+            });
 
-        return RedirectToAction("Index", "Home");
-    }
-
-    // ✅ Show clear error
-    ViewBag.Error = "Invalid email or password.";
-    return View();
+            return RedirectToAction("Index", "Home");
         }
+
+        ViewBag.Error = "Invalid email or password.";
+        return View();
+    }
+    catch (Exception ex)
+    {
+        ViewBag.Error = $"Login error: {ex.Message}";
+        return View();
+    }
+}
 
         [Authorize(Roles = "Admin")]
         [HttpGet]

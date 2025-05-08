@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 var builder = WebApplication.CreateBuilder(args);
 
 // MongoDB connection
-var mongoUri = builder.Configuration["MONGODB_URI"] 
-               ?? throw new Exception("MONGODB_URI not set");
+var mongoUri = builder.Configuration["MONGODB_URI"]
+    ?? throw new Exception("MONGODB_URI not set");
 
 builder.Services.AddSingleton<IMongoClient>(sp =>
     new MongoClient(mongoUri));
