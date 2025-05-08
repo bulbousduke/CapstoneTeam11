@@ -116,6 +116,28 @@ input[type="checkbox"]:focus-visible {
     outline-offset: 1.5px;
 }
 
+/* alert message styling */
+.alert {
+    margin: 0 auto;
+    max-width: 600px; /* to match max-width in .form-container */
+    border-radius: 12.5px;
+    border: 2px solid #474247;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 0px; 
+    font-weight: bold;
+    /* vertical-align: auto; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* text-align: left; */
+}
+.alert-icon {
+    vertical-align: top;
+    /* flex-shrink: 0; */
+    /* align-self: flex-start; */
+    /* margin-right: 10px; */
+}
+
 /* navbar styling */
 .navbar {
     display: flex;
