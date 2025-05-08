@@ -33,6 +33,12 @@ builder.Services.AddAuthentication("MyCookieAuth")
 
 builder.Services.AddControllersWithViews();
 
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+    serverOptions.ListenAnyIP(int.Parse(port));
+});
+
 var app = builder.Build();
 
 // Middleware pipeline
