@@ -19,8 +19,14 @@ namespace CapstoneTeam11.Controllers
             _userService = userService;
         }
 
-        // GET: /Account/Register
-        [HttpPost]
+[HttpGet]
+[AllowAnonymous]
+public IActionResult Register()
+{
+    return View();
+}
+       // GET: /Account/Register
+[HttpPost]
 [ValidateAntiForgeryToken]
 public async Task<IActionResult> Register(string name, string email, string password)
 {
