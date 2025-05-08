@@ -20,6 +20,7 @@
 }
 
 <form method="post" asp-controller="Account" asp-action="Login">
+    @Html.AntiForgeryToken()
     <div>
         <label>Email</label>
         <input type="email" name="email" required 

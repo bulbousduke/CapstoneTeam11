@@ -77,6 +77,7 @@ namespace CapstoneTeam11.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(string email, string password, bool rememberMe)
         {
             var user = _userService.Login(email, password);
