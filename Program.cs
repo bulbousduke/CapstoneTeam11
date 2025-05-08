@@ -47,11 +47,7 @@ builder.WebHost.ConfigureKestrel(serverOptions =>
 var app = builder.Build();
 
 // Middleware pipeline
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
-}
+app.UseDeveloperExceptionPage(); // Show full error stack
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
