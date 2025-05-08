@@ -1,21 +1,26 @@
 # syntax=docker/dockerfile:1
 
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+# Build Stage
+FROM mcr.microsoft.com/dotnet/sdk:9.0-alpine AS build
 
-COPY . /source
 WORKDIR /source
 
-ARG TARGETARCH
+# Copy source code
+COPY . .
 
-# ✅ FIXED: Only one publish command
-RUN dotnet publish -a ${TARGETARCH/amd64/x64} --use-current-runtime --self-contained false -o /app
+# Restore dependencies
+RUN dotnet restore
 
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
+# Publish app (use Release config and correct runtime)
+RUN dotnet publish -c Release -r linux-x64 --self-contained false -o /app
+
+# Runtime Stage
+FROM mcr.microsoft.com/dotnet/aspnet:9.0-alpine AS final
+
 WORKDIR /app
 
+# Copy from build
 COPY --from=build /app .
 
-# ❗ Optional: Remove or define this if needed
-# USER $APP_UID
-
+# Run the app
 ENTRYPOINT ["dotnet", "CapstoneTeam11.dll"]
