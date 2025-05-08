@@ -80,29 +80,31 @@ namespace CapstoneTeam11.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(string email, string password, bool rememberMe)
         {
-            var user = _userService.Login(email, password);
-            if (user != null)
-            {
-                var claims = new List<Claim>
-                {
-                    new(ClaimTypes.Name, user.Name),
-                    new(ClaimTypes.Email, user.Email),
-                    new("AccessLevel", user.AccessLevel.ToString())
-                };
+            var user = _userService.Login(email, password); // ← Is this returning null?
 
-                var identity = new ClaimsIdentity(claims, "MyCookieAuth");
-                var principal = new ClaimsPrincipal(identity);
+    if (user != null)
+    {
+        var claims = new List<Claim>
+        {
+            new(ClaimTypes.Name, user.Name),
+            new(ClaimTypes.Email, user.Email),
+            new("AccessLevel", user.AccessLevel.ToString())
+        };
 
-                await HttpContext.SignInAsync("MyCookieAuth", principal, new AuthenticationProperties
-                {
-                    IsPersistent = rememberMe
-                });
+        var identity = new ClaimsIdentity(claims, "MyCookieAuth");
+        var principal = new ClaimsPrincipal(identity);
 
-                return RedirectToAction("Index", "Home");
-            }
+        await HttpContext.SignInAsync("MyCookieAuth", principal, new AuthenticationProperties
+        {
+            IsPersistent = rememberMe
+        });
 
-            ViewBag.Error = "Invalid email or password.";
-            return View();
+        return RedirectToAction("Index", "Home");
+    }
+
+    // ✅ Show clear error
+    ViewBag.Error = "Invalid email or password.";
+    return View();
         }
 
         [Authorize(Roles = "Admin")]

@@ -32,6 +32,8 @@ builder.Services.AddAuthentication("MyCookieAuth")
     {
         options.LoginPath = "/Account/Login";
         options.LogoutPath = "/Account/Logout";
+        options.Cookie.SecurePolicy = CookieSecurePolicy.None;
+        options.Cookie.SameSite = SameSiteMode.Lax;
     });
 
 builder.Services.AddControllersWithViews();

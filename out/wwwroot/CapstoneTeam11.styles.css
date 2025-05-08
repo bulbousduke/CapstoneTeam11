@@ -1,0 +1,74 @@
+/* _content/CapstoneTeam11/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-8nqr74nqyc] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-8nqr74nqyc] {
+  color: #0077cc;
+}
+
+.btn-primary[b-8nqr74nqyc] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.navbar[b-8nqr74nqyc] {
+  background-color: #570052;
+}
+
+.navbar-toggler-icon[b-8nqr74nqyc] {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler[b-8nqr74nqyc] {
+    border-color: white;
+    background-color: transparent;
+}
+
+.navbar-toggler:focus[b-8nqr74nqyc] {
+  border-color: #000;
+  outline: 2px solid white;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+}
+/* button:focus,
+.btn:focus {
+  border-color: #000;
+  outline: 2px solid white;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+} */
+
+.nav-pills .nav-link.active[b-8nqr74nqyc], .nav-pills .show > .nav-link[b-8nqr74nqyc] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-8nqr74nqyc] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-8nqr74nqyc] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-8nqr74nqyc] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-8nqr74nqyc] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-8nqr74nqyc] {
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
