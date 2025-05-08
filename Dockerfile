@@ -26,7 +26,7 @@ ARG TARGETARCH
 # Leverage a cache mount to /root/.nuget/packages so that subsequent builds don't have to re-download packages.
 # If TARGETARCH is "amd64", replace it with "x64" - "x64" is .NET's canonical name for this and "amd64" doesn't
 #   work in .NET 6.0.
-RUN --mount=type=cache,id=nuget,target=/root/.nuget/packages \
+RUN dotnet publish -a ${TARGETARCH/amd64/x64} --use-current-runtime --self-contained false -o /app \
     dotnet publish -a ${TARGETARCH/amd64/x64} --use-current-runtime --self-contained false -o /app
 
 # If you need to enable globalization and time zones:
