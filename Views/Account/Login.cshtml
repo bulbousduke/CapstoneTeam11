@@ -1,0 +1,51 @@
+@model CapstoneTeam11.Models.LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Login</h2>
+
+@if (TempData["LogoutMessage"] != null)
+{
+    <div style="color: green; font-weight: bold;">
+        @TempData["LogoutMessage"]
+    </div>
+}
+
+@if (ViewBag.Error != null)
+{
+    <div style="color:red">@ViewBag.Error</div>
+}
+
+<form method="post" asp-controller="Account" asp-action="Login">
+    <div>
+        <label>Email</label>
+        <input type="email" name="email" required 
+               list="previousEmails" autocomplete="username" />
+        <datalist id="previousEmails">
+            @if (ViewBag.PreviousEmails != null)
+            {
+                foreach (var email in ViewBag.PreviousEmails as List<string>)
+                {
+                    <option value="@email"></option>
+                }
+            }
+        </datalist>
+    </div>
+
+    <div>
+        <label>Password</label>
+        <input type="password" name="password" required autocomplete="current-password" />
+    </div>
+
+    <div>
+        <label>
+            <input type="checkbox" name="rememberMe" />
+            Remember me
+        </label>
+    </div>
+
+    <a asp-controller="Account" asp-action="Register">Register a new account</a>
+    <button type="submit">Login</button>
+</form>

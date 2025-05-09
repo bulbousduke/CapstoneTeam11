@@ -1,0 +1,33 @@
+@model List<CapstoneTeam11.Models.Ticket>
+
+@{
+    ViewData["Title"] = "View Past Tickets";
+}
+
+<h1>Past Tickets</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Priority</th>
+            <th>Is Completed</th>
+            <th>Actions</th> <!-- 👈 New column -->
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var ticket in Model)
+    {
+        <tr>
+            <td>@ticket.Description</td>
+            <td>@ticket.Category</td>
+            <td>@ticket.Priority</td>
+            <td>@ticket.IsCompleted</td>
+            <td>
+                <a asp-action="EditTicket" asp-route-id="@ticket.Id" class="btn btn-sm btn-warning">Edit</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
