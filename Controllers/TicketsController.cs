@@ -83,7 +83,13 @@ namespace CapstoneTeam11.Controllers
                 visibleTickets = allTickets.Where(t => t.CreatedBy?.Id == user.Id);
             }
 
-            return View(visibleTickets.ToList());
+            var sortedTickets = visibleTickets
+    .OrderBy(t => t.IsCompleted) // false (not completed) first
+    .ThenBy(t => t.Priority == Priority.High ? 0 :
+                 t.Priority == Priority.Medium ? 1 : 2) // custom priority order
+    .ToList();
+
+return View(sortedTickets);
         }
 
         [HttpGet]

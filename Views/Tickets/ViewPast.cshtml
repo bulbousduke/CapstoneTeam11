@@ -27,7 +27,7 @@
             <td>@ticket.Description</td>
             <td>@ticket.Category</td>
             <td>@ticket.Priority</td>
-            <td>@ticket.IsCompleted</td>
+            <td>@(ticket.IsCompleted ? "Yes" : "No")</td>
             @if (role == "Admin" || role == "Employee")
             {
                 <td>
