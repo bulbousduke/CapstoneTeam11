@@ -31,17 +31,20 @@ namespace CapstoneTeam11.Controllers
                 Priority = Enum.TryParse<Priority>(form["Priority"], out var priority) ? priority : Priority.Low,
                 CreatedDate = DateTime.UtcNow,
                 IsCompleted = false,
-                CreatedBy = new User
-                {
-                    UserId = ObjectId.GenerateNewId().ToString(),
-                    AccessLevel = AccessLevel.User,
-                    Email = "admin@example.com",
-                    PasswordHash = "admin123",
-                    Name = "Admin User"
-                },
                 Assignee = null,
                 JournalNotes = new List<string>()
             };
+
+            // ✅ Get logged-in user's email from claims
+            var email = User.FindFirst(ClaimTypes.Email)?.Value;
+            if (string.IsNullOrEmpty(email)) return Unauthorized();
+
+            // ✅ Retrieve full user object from the DB
+            var user = await _userService.GetUserByEmail(email);
+            if (user == null || string.IsNullOrEmpty(user.Id)) return Unauthorized();
+
+            // ✅ Set the real user as the ticket's creator
+            ticket.CreatedBy = user;
 
             await _ticketService.Create(ticket);
             return RedirectToAction("ViewPast");
