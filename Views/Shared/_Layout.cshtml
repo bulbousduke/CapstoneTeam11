@@ -27,33 +27,14 @@
                     <ul class="navbar-nav flex-grow-1">
                         @if (HttpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
                         {
-                            var accessLevel = HttpContextAccessor.HttpContext.User.FindFirst("AccessLevel")?.Value;
-
-                            if (accessLevel == "Admin")
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" asp-controller="Home" asp-action="ManageUsers">Manage Users</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" asp-controller="Tickets" asp-action="Manage">Manage Tickets</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" asp-controller="Home" asp-action="AdminDashboard">Admin Dashboard</a>
-                                </li>
-                            }
-                            else if (accessLevel == "Employee")
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" asp-controller="Home" asp-action="EmployeeDashboard">Employee Dashboard</a>
-                                </li>
-                            }
-                            else
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" asp-controller="Home" asp-action="UserDashboard">User Dashboard</a>
-                                </li>
-                            }
-
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-controller="Home" asp-action="Help">Help</a>
+                            </li>
+                            <li class="nav-item">
+                                <span class="nav-link text-light">
+                                    @HttpContextAccessor.HttpContext.User.FindFirst("AccessLevel")?.Value Dashboard
+                                </span>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link text-light" asp-controller="Account" asp-action="Logout">Logout</a>
                             </li>

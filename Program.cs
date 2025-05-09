@@ -12,11 +12,15 @@ if (connectionString == null)
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Get MongoDB URI from Azure App Settings
+// Get MongoDB URI from Azure App Settings (overrides env variable if present)
 var mongoUri = builder.Configuration["MONGODB_URI"];
 if (string.IsNullOrEmpty(mongoUri))
 {
-    throw new Exception("❌ MONGODB_URI not found in configuration.");
+    mongoUri = connectionString;
+}
+if (string.IsNullOrEmpty(mongoUri))
+{
+    throw new Exception("❌ MONGODB_URI not found in configuration or environment.");
 }
 
 // Register Mongo client and database
@@ -30,58 +34,48 @@ builder.Services.AddSingleton(sp =>
 // Register services
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ITicketService, TicketService>();
-
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<IMongoClient>(sp => new MongoClient(connectionString)); // register IMongoClient as a singleton so it can be injected
-builder.Services.AddSingleton<UserService>();
-builder.Services.AddSingleton<TicketService>(); 
-builder.Services.AddHttpContextAccessor();
-
-builder.Services.AddAuthorization();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllersWithViews();
 
-// MVC and Auth
-builder.Services.AddHttpContextAccessor();
-builder.Services.AddControllersWithViews();
+// Authentication
 builder.Services.AddAuthentication("MyCookieAuth")
     .AddCookie("MyCookieAuth", options =>
     {
         options.LoginPath = "/Account/Login";
         options.AccessDeniedPath = "/Account/AccessDenied";
+        options.LogoutPath = "/Account/Logout";
     });
 
-
+// Optional: session configuration
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromSeconds(20);
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
 
 var app = builder.Build();
 
-// Middlewares
+// Middleware
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
 app.UseRouting();
+
 app.UseAuthentication();
 app.UseAuthorization();
-// app.UseSession();
-// app.MapStaticAssets();
+// app.UseSession(); // Uncomment if session is used in controllers
 
-// Default route
+// Routing
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-    // .WithStaticAssets();
 
 app.Run();
- 

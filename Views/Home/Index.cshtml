@@ -1,48 +1,60 @@
 ﻿@{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Home Page";
     string accessLevel = ViewBag.AccessLevel as string ?? "User";
 }
 
-<div class="dashboard">
-    <h1>Welcome to Ticklr Ticket Management Dashboard</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticklr Dashboard</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
 
-    <div class="container text-center mt-4">
-        <div class="row">
-            <div class="col-md-4">
-                <a asp-controller="Tickets" asp-action="Create" class="card-link">
-                    <div class="card custom-card">
-                        <img src="~/images/create-ticket.png" class="card-img-top custom-card-img" alt="Create Ticket">
-                        <div class="card-body">
-                            <h5 class="card-title">CREATE A TICKET</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
+    <div class="dashboard">
+        <h1>Welcome to Ticklr Ticket Management Dashboard</h1>
 
-            @if (accessLevel == "Admin" || accessLevel == "Employee")
-            {
+        <div class="container text-center mt-4">
+            <div class="row">
                 <div class="col-md-4">
-                    <a asp-controller="Tickets" asp-action="Manage" class="card-link">
+                    <a asp-controller="Tickets" asp-action="Create" class="card-link">
                         <div class="card custom-card">
-                            <img src="~/images/manage-ticket.png" class="card-img-top custom-card-img" alt="Manage Tickets">
+                            <img src="~/images/create-ticket.png" class="card-img-top custom-card-img" alt="Create Ticket">
                             <div class="card-body">
-                                <h5 class="card-title">MANAGE TICKETS</h5>
+                                <h5 class="card-title">CREATE A TICKET</h5>
                             </div>
                         </div>
                     </a>
                 </div>
-            }
 
-            <div class="col-md-4">
-                <a asp-controller="Tickets" asp-action="ViewPast" class="card-link">
-                    <div class="card custom-card">
-                        <img src="~/images/view-tickets.png" class="card-img-top custom-card-img" alt="View Tickets">
-                        <div class="card-body">
-                            <h5 class="card-title">VIEW PAST TICKETS</h5>
-                        </div>
+                @if (accessLevel == "Admin" || accessLevel == "Employee")
+                {
+                    <div class="col-md-4">
+                        <a asp-controller="Tickets" asp-action="Manage" class="card-link">
+                            <div class="card custom-card">
+                                <img src="~/images/manage-ticket.png" class="card-img-top custom-card-img" alt="Manage Tickets">
+                                <div class="card-body">
+                                    <h5 class="card-title">MANAGE TICKETS</h5>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
+                }
+
+                <div class="col-md-4">
+                    <a asp-controller="Tickets" asp-action="ViewPast" class="card-link">
+                        <div class="card custom-card">
+                            <img src="~/images/view-tickets.png" class="card-img-top custom-card-img" alt="View Tickets">
+                            <div class="card-body">
+                                <h5 class="card-title">VIEW PAST TICKETS</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</body>
+</html>

@@ -18,27 +18,24 @@ body {
 .navbar-toggler:focus-visible {
     border-color: #000;
     outline: 3px solid white;
-    /* box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5); */
 }
-/* .container-fluid:focus-within .navbar-toggler, */
 .navbar-toggler:focus {
     box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
 }
-.nav-item:focus-within, 
+.nav-item:focus-within,
 .navbar-brand:focus-visible {
     outline: 3px solid white;
 }
 .navbar-brand:focus-visible {
-    /* outline: 2px solid white; */
     box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
 }
-  
+
+/* link styling */
 a {
     color: #570052;
     text-decoration: underline;
 }
 a:hover {
-    /* color: #3B0038; */
     text-decoration: none;
 }
 
@@ -47,24 +44,24 @@ a:hover {
     margin: 0 auto;
     padding: 25px 30px;
     max-width: 600px;
-    /* background-color: #D8CBD6; */
     background-color: #D0C7D6;
     border-radius: 25px;
     border: 3px solid #570052;
 }
 .form-item {
     display: flex;
-    flex-direction: column; /* stack label and input vertically */
+    flex-direction: column;
     margin-bottom: 15px;
 }
 label {
     margin-bottom: 5px;
     font-weight: bold;
-    text-align: left; 
+    text-align: left;
     color: #000;
 }
+
 /* styling for input fields (excluding submit) */
-input[type="text"], 
+input[type="text"],
 input[type="password"],
 input[type="select"],
 input[type="email"],
@@ -75,7 +72,8 @@ textarea {
     border-radius: 12.5px;
     border: 1.5px solid #570052;
 }
-/* styling for submit button */
+
+/* submit button styling */
 input[type="submit"] {
     border-radius: 25px;
     border: 3px solid #570052;
@@ -86,22 +84,21 @@ input[type="submit"] {
     min-width: 100px;
     padding: 5px;
 }
-input[type="submit"]:hover, 
+input[type="submit"]:hover,
 input[type="submit"]:focus {
-    border: 3px solid #570052;
     background-color: #538300;
     text-decoration: underline;
 }
-/* custom styling to account for longer text */
 #create-ticket-btn {
     min-width: 200px;
 }
-/* styling for checkbox */
+
+/* checkbox styling */
 input[type="checkbox"] {
     accent-color: #570052;
-}  
+}
 
-/* focus indicator styles for forms */
+/* focus indicators for form fields */
 .form-item input:focus-visible,
 .form-item select:focus-visible,
 .form-item textarea:focus-visible {
@@ -116,26 +113,19 @@ input[type="checkbox"]:focus-visible {
     outline-offset: 1.5px;
 }
 
-/* alert message styling */
+/* alert styling */
 .alert {
     margin: 0 auto;
-    max-width: 600px; /* to match max-width in .form-container */
+    max-width: 600px;
     border-radius: 12.5px;
     border: 2px solid #474247;
     margin-bottom: 15px;
     padding-top: 10px;
-    padding-bottom: 0px; 
+    padding-bottom: 0px;
     font-weight: bold;
-    /* vertical-align: auto; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* text-align: left; */
 }
 .alert-icon {
     vertical-align: top;
-    /* flex-shrink: 0; */
-    /* align-self: flex-start; */
-    /* margin-right: 10px; */
 }
 
 /* navbar styling */
@@ -148,9 +138,24 @@ input[type="checkbox"]:focus-visible {
 }
 .nav-link:hover,
 .nav-link:focus {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
+/* nav link group from main */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.nav-links li {
+    display: inline;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* dashboard styling */
 .dashboard {
     margin-top: 50px;
 }
@@ -170,61 +175,51 @@ input[type="checkbox"]:focus-visible {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease-in-out;
 }
-
 .custom-card:hover {
     transform: scale(1.05);
 }
-
 .custom-card-img {
     width: 150px;
     height: 150px;
     margin-top: 20px;
 }
-
 .card-title {
     font-weight: bold;
     margin-top: 10px;
 }
-
 .card-link {
     text-decoration: none;
     color: inherit;
 }
-
 .navbar-logo {
     height: 50px;
     width: auto;
 }
 
 /* font styling classes */
-  
-  .atkinson-hyperlegible-regular {
+.atkinson-hyperlegible-regular {
     font-family: "Atkinson Hyperlegible", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
-  
-  .atkinson-hyperlegible-bold {
+}
+.atkinson-hyperlegible-bold {
     font-family: "Atkinson Hyperlegible", sans-serif;
     font-weight: 700;
     font-style: normal;
-  }
-  
-  .atkinson-hyperlegible-regular-italic {
+}
+.atkinson-hyperlegible-regular-italic {
     font-family: "Atkinson Hyperlegible", sans-serif;
     font-weight: 400;
     font-style: italic;
-  }
-  
-  .atkinson-hyperlegible-bold-italic {
+}
+.atkinson-hyperlegible-bold-italic {
     font-family: "Atkinson Hyperlegible", sans-serif;
     font-weight: 700;
     font-style: italic;
-  }
+}
 
-  /* Creat.cshtml */
-
-  .submit-button {
+/* create.cshtml override */
+.submit-button {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
