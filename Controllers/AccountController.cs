@@ -27,46 +27,52 @@ public IActionResult Register()
 }
        // GET: /Account/Register
 [HttpPost]
-[ValidateAntiForgeryToken]
-public async Task<IActionResult> Register(string name, string email, string password)
+[ValidateAntiForgeryToken]        
+public async Task<IActionResult> Register(string name, string email, string password, string confirmPassword)
 {
-    try
+    if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) ||
+        string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
     {
-        if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
-        {
-            ViewBag.Error = "All fields are required.";
-            return View();
-        }
-
-        if (password.Length < 8 || password.Length > 64 || !Regex.IsMatch(password, @"\d"))
-        {
-            ViewBag.Error = "Password must be 8–64 chars and include a number.";
-            return View();
-        }
-
-        if (await _userService.GetUserByEmail(email) != null)
-        {
-            ViewBag.Error = "Email is already registered.";
-            return View();
-        }
-
-        var newUser = new User
-        {
-            Name = name,
-            Email = email,
-            PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
-            AccessLevel = AccessLevel.User,
-            AssignedCategories = new List<string>()
-        };
-
-        await _userService.Create(newUser);
-        return RedirectToAction("Login");
-    }
-    catch (Exception ex)
-    {
-        ViewBag.Error = $"Registration error: {ex.Message}";
+        ViewBag.Error = "All fields are required.";
         return View();
     }
+
+    if (password != confirmPassword)
+    {
+        ViewBag.Error = "Passwords do not match.";
+        return View();
+    }
+
+    if (password.Length < 8 || password.Length > 64)
+    {
+        ViewBag.Error = "Password must be between 8 and 64 characters.";
+        return View();
+    }
+
+    if (!Regex.IsMatch(password, @"\d"))
+    {
+        ViewBag.Error = "Password must include at least one number.";
+        return View();
+    }
+
+    if (await _userService.GetUserByEmail(email) != null)
+    {
+        ViewBag.Error = "Email is already registered.";
+        return View();
+    }
+
+    var newUser = new User
+    {
+        Name = name,
+        Email = email,
+        PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
+        AccessLevel = AccessLevel.User,
+        AssignedCategories = new List<string>()
+    };
+
+    await _userService.Create(newUser);
+
+    return RedirectToAction("Login");
 }
 
         // GET: /Account/Login

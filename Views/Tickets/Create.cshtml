@@ -4,32 +4,33 @@
     ViewData["Title"] = "Create New Ticket";
 }
 
-<h2>Create New Ticket</h2>
+<h1>@ViewData["Title"]</h1>
 
-<form asp-controller="Tickets" asp-action="Create" method="post">
-    <div class="form-group">
-        <label asp-for="Description" class="control-label">Description</label>
-        <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+<form asp-controller="Tickets" asp-action="Create" method="post" class="form-container">
+
+    <div class="form-item">
+        <label asp-for="Description">Description:</label><br />
+        <textarea asp-for="Description" class="form-control" rows="4"></textarea><br />
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
-        <label asp-for="Category" class="control-label">Category</label>
+    <div class="form-item">
+        <label asp-for="Category">Category</label>
         <select asp-for="Category" class="form-control" asp-items="Html.GetEnumSelectList<Category>()">
             <option value="">-- Select Category --</option>
         </select>
         <span asp-validation-for="Category" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
-        <label asp-for="Priority" class="control-label">Priority</label>
+    <div class="form-item">
+        <label asp-for="Priority">Priority:</label><br />
         <select asp-for="Priority" class="form-control" asp-items="Html.GetEnumSelectList<Priority>()">
             <option value="">-- Select Priority --</option>
-        </select>
+        </select><br />
         <span asp-validation-for="Priority" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary mt-3">Create Ticket</button>
+    <input type="submit" value="Create Ticket" class="btn btn-primary mt-3" id="create-ticket-btn" />
 </form>
 
 @section Scripts {

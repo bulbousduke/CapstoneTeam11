@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "View Past Tickets";
+    var role = User.FindFirst("AccessLevel")?.Value;
 }
 
 <h1>Past Tickets</h1>
@@ -13,7 +14,10 @@
             <th>Category</th>
             <th>Priority</th>
             <th>Is Completed</th>
-            <th>Actions</th> <!-- 👈 New column -->
+            @if (role == "Admin" || role == "Employee")
+            {
+                <th>Actions</th>
+            }
         </tr>
     </thead>
     <tbody>
@@ -23,10 +27,13 @@
             <td>@ticket.Description</td>
             <td>@ticket.Category</td>
             <td>@ticket.Priority</td>
-            <td>@ticket.IsCompleted</td>
-            <td>
-                <a asp-action="EditTicket" asp-route-id="@ticket.Id" class="btn btn-sm btn-warning">Edit</a>
-            </td>
+            <td>@(ticket.IsCompleted ? "Yes" : "No")</td>
+            @if (role == "Admin" || role == "Employee")
+            {
+                <td>
+                    <a asp-action="EditTicket" asp-route-id="@ticket.Id" class="btn btn-sm btn-warning">Edit</a>
+                </td>
+            }
         </tr>
     }
     </tbody>

@@ -37,6 +37,17 @@ namespace CapstoneTeam11.Controllers
                     break;
 
                 case "Employee":
+                    // if (user == null) // null check to solve possible null reference error
+                    //     return RedirectToAction("Login", "Account");
+                    
+                    // List<Category> categories = new List<Category>();
+                    
+                    // if (user.AssignedCategories != null)
+                    // {
+                    //     categories = user.AssignedCategories
+                    //     .Select(c => Enum.TryParse<Category>(c, out var cat) ? cat : Category.Other)
+                    //     .ToList();
+                    // }
                     var categories = user.AssignedCategories
                         .Select(c => Enum.TryParse<Category>(c, out var cat) ? cat : Category.Other)
                         .ToList();
@@ -47,6 +58,9 @@ namespace CapstoneTeam11.Controllers
                     break;
 
                 default: // User
+                    // if (user == null) // null check to solve possible null reference error
+                    //     return RedirectToAction("Login", "Account");
+
                     ticketsToShow = allTickets
                         .Where(t => t.CreatedBy?.Id == user.Id)
                         .ToList();

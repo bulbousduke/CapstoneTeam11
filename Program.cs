@@ -3,50 +3,63 @@ using MongoDB.Driver;
 using CapstoneTeam11.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
+var connectionString = Environment.GetEnvironmentVariable("MONGODB_URI");
+if (connectionString == null)
+{
+    Console.WriteLine("You must set your 'MONGODB_URI' environment variable. To learn how to set it, see https://www.mongodb.com/docs/drivers/csharp/current/quick-start/#set-your-connection-string");
+    Environment.Exit(0);
+}
+
 var builder = WebApplication.CreateBuilder(args);
 
-// MongoDB connection
-var mongoUri = builder.Configuration["MONGODB_URI"]
-    ?? throw new Exception("MONGODB_URI not set");
+// Get MongoDB URI from Azure App Settings (overrides env variable if present)
+var mongoUri = builder.Configuration["MONGODB_URI"];
+if (string.IsNullOrEmpty(mongoUri))
+{
+    mongoUri = connectionString;
+}
+if (string.IsNullOrEmpty(mongoUri))
+{
+    throw new Exception("❌ MONGODB_URI not found in configuration or environment.");
+}
 
-builder.Services.AddSingleton<IMongoClient>(sp =>
-    new MongoClient(mongoUri));
-
-// Inject the MongoDB database itself
+// Register Mongo client and database
+builder.Services.AddSingleton<IMongoClient>(new MongoClient(mongoUri));
 builder.Services.AddSingleton(sp =>
 {
     var client = sp.GetRequiredService<IMongoClient>();
-    return client.GetDatabase("Ticklr"); // replace with your DB name if different
+    return client.GetDatabase("TICKLR");
 });
 
 // Register services
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ITicketService, TicketService>();
-
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllersWithViews();
 
-// Add authentication
+// Authentication
 builder.Services.AddAuthentication("MyCookieAuth")
     .AddCookie("MyCookieAuth", options =>
     {
         options.LoginPath = "/Account/Login";
+        options.AccessDeniedPath = "/Account/AccessDenied";
         options.LogoutPath = "/Account/Logout";
         options.Cookie.SecurePolicy = CookieSecurePolicy.None;
         options.Cookie.SameSite = SameSiteMode.Lax;
     });
 
-builder.Services.AddControllersWithViews();
-
-var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-builder.WebHost.ConfigureKestrel(serverOptions =>
+// Optional: session configuration
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
 {
-    serverOptions.ListenAnyIP(int.Parse(port));
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
 });
 
 var app = builder.Build();
 
-// Middleware pipeline
+// Middleware
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -58,22 +71,13 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// Auth middleware
 app.UseAuthentication();
 app.UseAuthorization();
+// app.UseSession(); // Uncomment if session is used in controllers
 
-app.Use(async (context, next) =>
-{
-    if (context.Request.Path == "/")
-    {
-        context.Response.Redirect("/Account/Login");
-        return;
-    }
-    await next();
-});
-
+// Routing
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Account}/{action=Login}/{id?}"); // default to login
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
