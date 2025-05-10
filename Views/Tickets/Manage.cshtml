@@ -2,30 +2,45 @@
     ViewData["Title"] = "Manage Tickets";
 }
 
-<div class="card">
-    <h2>Ticket Analytics</h2>
-    <p>Total Tickets: @ViewBag.TotalTickets</p>
-    <p>Open Tickets: @ViewBag.OpenTickets</p>
-    <p>Closed Tickets: @ViewBag.ClosedTickets</p>
+<h1>@ViewData["Title"]</h1>
 
-    <h3>Tickets by Category</h3>
-    <ul>
-        @foreach (var item in (Dictionary<string, int>)ViewBag.TicketsByCategory)
-        {
-            <li>@item.Key: @item.Value</li>
-        }
-    </ul>
-</div>
-
-<div class="card mt-4">
-    <h2>User Analytics</h2>
-    <p>Total Users: @ViewBag.TotalUsers</p>
-
-    <h3>Users by Role</h3>
-    <ul>
-        @foreach (var role in (Dictionary<string, int>)ViewBag.UsersByRole)
-        {
-            <li>@role.Key: @role.Value</li>
-        }
-    </ul>
+<div class="container text-center mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card analytics-card">
+                <div class="card-body">
+                    <h2 class="fs-3">Tickets by Status</h2>
+                    <hr>
+                    <p>Total Tickets: <b>@ViewBag.TotalTickets</b></p>
+                    <p>Open Tickets: <b>@ViewBag.OpenTickets</b></p>
+                    <p>Closed Tickets: <b>@ViewBag.ClosedTickets</b></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card analytics-card">
+                <div class="card-body">
+                    <h2 class="fs-3">Tickets by Category</h2>
+                    <hr>
+                    @foreach (var item in (Dictionary<string, int>)ViewBag.TicketsByCategory)
+                    {
+                        <p>@item.Key: <b>@item.Value</b></p>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card analytics-card">
+                <div class="card-body">
+                    <h2 class="fs-3">Users by Role</h2>
+                    <hr>
+                    @foreach (var role in (Dictionary<string, int>)ViewBag.UsersByRole)
+                    {
+                        <p>@role.Key: <b>@role.Value</b></p>
+                    }
+                    <p>Total Users: <b>@ViewBag.TotalUsers</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

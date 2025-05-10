@@ -178,10 +178,17 @@ input[type="checkbox"]:focus-visible {
     border-radius: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease-in-out;
+    border: 3px solid #570052;
 }
 .custom-card:hover {
     transform: scale(1.05);
 }
+.custom-card:focus,
+.custom-card:focus-visible {
+    border: 6px solid #570052;
+    text-decoration: underline;
+}
+
 .custom-card-img {
     width: 150px;
     height: 150px;
@@ -199,6 +206,30 @@ input[type="checkbox"]:focus-visible {
     height: 50px;
     width: auto;
 }
+
+/* analytics styling */
+.analytics-card {
+    /* width: 100%; */
+    /* max-width: 300px; */
+    /* min-height: 200px; */
+    height: 300px;
+    margin: auto;
+    padding: 10px;
+    /* gap: 2rem; */
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border: 3px solid #570052;
+    background-color: #fff;
+}
+/* .analytics-card:hover {
+    transform: scale(1.05);
+}
+.analytics-card:focus,
+.analytics-card:focus-visible {
+    border: 6px solid #570052;
+} */
 
 /* font styling classes */
 .atkinson-hyperlegible-regular {
