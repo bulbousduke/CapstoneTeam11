@@ -13,7 +13,7 @@ namespace CapstoneTeam11.Services
         {
             var connectionString = configuration["MONGODB_URI"];
             var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("Ticklr");
+            var database = client.GetDatabase("TICKLR");
             _ticketCollection = database.GetCollection<Ticket>("tickets");
         }
 

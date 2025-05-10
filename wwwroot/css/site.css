@@ -9,6 +9,10 @@ body {
     text-align: center;
 }
 
+hr {
+    color: #474747;
+}
+
 /* general focus indicator style for keyboard navigation */
 :focus-visible {
     outline: 3px solid #000;
