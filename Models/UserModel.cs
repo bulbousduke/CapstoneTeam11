@@ -3,7 +3,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace CapstoneTeam11.Models;
- public class User
+public class User
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
@@ -26,5 +26,5 @@ namespace CapstoneTeam11.Models;
     public string PasswordHash { get; set; } = string.Empty;
 
     [BsonElement("AssignedCategories")]
-    public List<string> AssignedCategories { get; set; } = new();
+    public List<string> AssignedCategories { get; set; } = [];
 }

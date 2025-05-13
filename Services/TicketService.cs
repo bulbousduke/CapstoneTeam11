@@ -27,7 +27,7 @@ namespace CapstoneTeam11.Services
             return await _ticketCollection.Find(t => t.Id == id).FirstOrDefaultAsync();
         }
 
-        public async Task<Ticket?> Create(Ticket ticket) // <-- Added this Create method
+        public async Task<Ticket?> Create(Ticket ticket)
         {
             await _ticketCollection.InsertOneAsync(ticket);
             return ticket;
@@ -51,7 +51,7 @@ namespace CapstoneTeam11.Services
         public (int open, int closed) GetOpenClosedTicketCounts()
         {
             var open = (int)_ticketCollection.AsQueryable().Count(t => !t.IsCompleted);
-var closed = (int)_ticketCollection.AsQueryable().Count(t => t.IsCompleted);
+            var closed = (int)_ticketCollection.AsQueryable().Count(t => t.IsCompleted);
             return (open, closed);
         }
 

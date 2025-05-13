@@ -6,14 +6,9 @@ using BCrypt.Net;
 
 namespace CapstoneTeam11.Services
 {
-    public class UserService : IUserService
+    public class UserService(IMongoDatabase database) : IUserService
     {
-        private readonly IMongoCollection<User> _users;
-
-        public UserService(IMongoDatabase database)
-        {
-            _users = database.GetCollection<User>("users");
-        }
+        private readonly IMongoCollection<User> _users = database.GetCollection<User>("users");
 
         public async Task<User?> GetUserById(string id) =>
             await _users.Find(u => u.Id == id).FirstOrDefaultAsync();
@@ -33,61 +28,60 @@ namespace CapstoneTeam11.Services
         public async Task Remove(string id) =>
             await _users.DeleteOneAsync(u => u.Id == id);
 
-    public bool Register(string name, string email, string password, out string error)
-    {
-        if (_users.Find(u => u.Email == email).Any())
+        public bool Register(string name, string email, string password, out string error)
         {
-            error = "Email already registered.";
-            return false;
+            if (_users.Find(u => u.Email == email).Any())
+            {
+                error = "Email already registered.";
+                return false;
+            }
+
+            var newUser = new User
+            {
+                Name = name,
+                Email = email,
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
+                AccessLevel = AccessLevel.User
+            };
+
+            _users.InsertOne(newUser);
+            error = string.Empty;
+            return true;
         }
 
-        var newUser = new User
-        {
-            Name = name,
-            Email = email,
-            PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
-            AccessLevel = AccessLevel.User
-        };
-
-        _users.InsertOne(newUser);
-        error = string.Empty;
-        return true;
-    }
-
         public User? Login(string email, string password)
-{
-    var user = _users.Find(u => u.Email == email).FirstOrDefault();
-    return user != null && BCrypt.Net.BCrypt.Verify(password, user.PasswordHash)
-        ? user
-        : null;
-}
+        {
+            var user = _users.Find(u => u.Email == email).FirstOrDefault();
+            return user != null && BCrypt.Net.BCrypt.Verify(password, user.PasswordHash)
+                ? user
+                : null;
+        }
 
-public async Task<bool> UpdateAccessLevel(string userId, AccessLevel newRole)
-{
-    var user = await GetUserById(userId);
-    if (user == null) return false;
+        public async Task<bool> UpdateAccessLevel(string userId, AccessLevel newRole)
+        {
+            var user = await GetUserById(userId);
+            if (user == null) return false;
 
-    user.AccessLevel = newRole;
-    await Update(userId, user);
-    return true;
-}
+            user.AccessLevel = newRole;
+            await Update(userId, user);
+            return true;
+        }
 
-public async Task<User?> GetUserByEmail(string email)
-{
-    return await _users.Find(u => u.Email == email).FirstOrDefaultAsync();
-}
+        public async Task<User?> GetUserByEmail(string email)
+        {
+            return await _users.Find(u => u.Email == email).FirstOrDefaultAsync();
+        }
 
-public int GetTotalUsers()
-{
-    return (int)_users.AsQueryable().Count();
-}
+        public int GetTotalUsers()
+        {
+            return (int)_users.AsQueryable().Count();
+        }
 
-public Dictionary<string, int> GetUsersByAccessLevel()
-{
-    return _users.AsQueryable()
-        .GroupBy(u => u.AccessLevel)
-        .ToDictionary(g => g.Key.ToString(), g => g.Count());
-}
-    
+        public Dictionary<string, int> GetUsersByAccessLevel()
+        {
+            return _users.AsQueryable()
+                .GroupBy(u => u.AccessLevel)
+                .ToDictionary(g => g.Key.ToString(), g => g.Count());
+        }
     }
 }

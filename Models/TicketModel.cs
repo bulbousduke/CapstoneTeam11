@@ -3,9 +3,8 @@ using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 
-namespace CapstoneTeam11.Models
-{
-    public class Ticket
+namespace CapstoneTeam11.Models;
+public class Ticket
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
@@ -36,5 +35,4 @@ namespace CapstoneTeam11.Models
 
     [BsonElement("journalEntries")]
     public List<string> JournalNotes { get; set; } = new();
-}
 }

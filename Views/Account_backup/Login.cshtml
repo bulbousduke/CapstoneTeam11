@@ -1,5 +1,3 @@
-@model CapstoneTeam11.Models.LoginModel
-
 @{
     ViewData["Title"] = "Login";
 }
@@ -16,15 +14,6 @@
         <label>Email</label>
         <input type="email" name="email" required 
                list="previousEmails" autocomplete="username" />
-        <datalist id="previousEmails">
-            @if (ViewBag.PreviousEmails != null)
-    {
-        foreach (var email in ViewBag.PreviousEmails as List<string>)
-        {
-            <option value="@email"></option>
-        }
-    }
-        </datalist>
     </div>
     <div>
         <label>Password</label>
