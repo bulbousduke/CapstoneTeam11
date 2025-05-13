@@ -104,6 +104,9 @@ input[type="submit"]:focus {
 #create-ticket-btn {
     min-width: 200px;
 }
+#save-changes-btn {
+    min-width: 170px;
+}
 /* #cancel-btn {
     margin-left: 20px;
     border: 2px solid #570052;

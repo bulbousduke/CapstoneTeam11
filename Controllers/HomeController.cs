@@ -7,16 +7,11 @@ using CapstoneTeam11.Models;
 namespace CapstoneTeam11.Controllers
 {
     [Authorize]
-    public class HomeController : Controller
+    public class HomeController(ITicketService ticketService, IUserService userService) : Controller
     {
-        private readonly IUserService _userService;
-        private readonly ITicketService _ticketService;
+        private readonly IUserService _userService = userService;
+        private readonly ITicketService _ticketService = ticketService;
 
-        public HomeController(ITicketService ticketService, IUserService userService)
-        {
-            _ticketService = ticketService;
-            _userService = userService;
-        }
         public async Task<IActionResult> Index()
         {
             var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
@@ -48,7 +43,7 @@ namespace CapstoneTeam11.Controllers
                     //     .Select(c => Enum.TryParse<Category>(c, out var cat) ? cat : Category.Other)
                     //     .ToList();
                     // }
-                    var categories = user.AssignedCategories
+                    var categories = user!.AssignedCategories
                         .Select(c => Enum.TryParse<Category>(c, out var cat) ? cat : Category.Other)
                         .ToList();
 
@@ -62,7 +57,7 @@ namespace CapstoneTeam11.Controllers
                     //     return RedirectToAction("Login", "Account");
 
                     ticketsToShow = allTickets
-                        .Where(t => t.CreatedBy?.Id == user.Id)
+                        .Where(t => t.CreatedBy?.Id == user!.Id)
                         .ToList();
                     break;
             }
@@ -72,29 +67,29 @@ namespace CapstoneTeam11.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-public async Task<IActionResult> ManageUsers()
-{
-    var users = await _userService.GetAllUsers();
-    return View(users);
-}
+        public async Task<IActionResult> ManageUsers()
+        {
+            var users = await _userService.GetAllUsers();
+            return View(users);
+        }
 
-[HttpPost]
-[Authorize(Roles = "Admin")]
-public async Task<IActionResult> UpdateUserRole(string userId, AccessLevel newRole)
-{
-    var user = await _userService.GetUserById(userId);
-    if (user == null) return NotFound();
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> UpdateUserRole(string userId, AccessLevel newRole)
+        {
+            var user = await _userService.GetUserById(userId);
+            if (user == null) return NotFound();
 
-    user.AccessLevel = newRole;
-    await _userService.Update(userId, user);
+            user.AccessLevel = newRole;
+            await _userService.Update(userId, user);
 
-    return RedirectToAction("ManageUsers");
-}
+            return RedirectToAction("ManageUsers");
+        }
 
-[HttpGet]
-public IActionResult Help()
-{
-    return View();
-}
+        [HttpGet]
+        public IActionResult Help()
+        {
+            return View();
+        }
     }
 }

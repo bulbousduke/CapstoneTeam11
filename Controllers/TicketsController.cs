@@ -26,7 +26,7 @@ namespace CapstoneTeam11.Controllers
         {
             var ticket = new Ticket
             {
-                Description = form["Description"],
+                Description = form["Description"]!,
                 Category = Enum.TryParse<Category>(form["Category"], out var category) ? category : Category.Other,
                 Priority = Enum.TryParse<Priority>(form["Priority"], out var priority) ? priority : Priority.Low,
                 CreatedDate = DateTime.UtcNow,
@@ -69,7 +69,7 @@ namespace CapstoneTeam11.Controllers
             else if (userAccessLevel == "Employee")
             {
                 var employee = await _userService.GetUserByEmail(userEmail);
-                var allowedCategories = employee.AssignedCategories
+                var allowedCategories = employee!.AssignedCategories
                     .Select(c => Enum.TryParse<Category>(c, out var cat) ? cat : Category.Other)
                     .ToList();
 
@@ -80,16 +80,16 @@ namespace CapstoneTeam11.Controllers
             else
             {
                 var user = await _userService.GetUserByEmail(userEmail);
-                visibleTickets = allTickets.Where(t => t.CreatedBy?.Id == user.Id);
+                visibleTickets = allTickets.Where(t => t.CreatedBy?.Id == user!.Id);
             }
 
             var sortedTickets = visibleTickets
-    .OrderBy(t => t.IsCompleted) // false (not completed) first
-    .ThenBy(t => t.Priority == Priority.High ? 0 :
-                 t.Priority == Priority.Medium ? 1 : 2) // custom priority order
-    .ToList();
+                .OrderBy(t => t.IsCompleted) // false (not completed) first
+                .ThenBy(t => t.Priority == Priority.High ? 0 :
+                            t.Priority == Priority.Medium ? 1 : 2) // custom priority order
+                .ToList();
 
-return View(sortedTickets);
+            return View(sortedTickets);
         }
 
         [HttpGet]
@@ -110,7 +110,7 @@ return View(sortedTickets);
 
             try
             {
-                ticketToUpdate.Description = form["Description"];
+                ticketToUpdate.Description = form["Description"]!;
 
                 if (Enum.TryParse(form["Category"], out Category parsedCategory))
                     ticketToUpdate.Category = parsedCategory;
