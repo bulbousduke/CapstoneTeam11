@@ -24,7 +24,18 @@ if (string.IsNullOrEmpty(mongoUri))
 }
 
 // Register Mongo client and database
-builder.Services.AddSingleton<IMongoClient>(new MongoClient(mongoUri));
+builder.Services.AddSingleton<IMongoClient>(sp =>
+{
+    var mongoUri = builder.Configuration["MONGODB_URI"];
+    var settings = MongoClientSettings.FromConnectionString(mongoUri);
+
+    settings.SslSettings = new SslSettings
+    {
+        EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12
+    };
+
+    return new MongoClient(settings);
+});
 builder.Services.AddSingleton(sp =>
 {
     var client = sp.GetRequiredService<IMongoClient>();
