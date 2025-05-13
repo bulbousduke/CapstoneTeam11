@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: ticklr-app
+    runtime: docker
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+        
