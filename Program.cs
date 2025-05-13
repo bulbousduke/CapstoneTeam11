@@ -13,7 +13,7 @@ if (connectionString == null)
 var builder = WebApplication.CreateBuilder(args);
 
 // Get MongoDB URI from Azure App Settings (overrides env variable if present)
-var mongoUri = builder.Configuration["MONGODB_URI"];
+var mongoUri = builder.Configuration.GetValue<string>("MONGODB_URI") ?? connectionString;
 if (string.IsNullOrEmpty(mongoUri))
 {
     mongoUri = connectionString;
@@ -36,6 +36,7 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ITicketService, TicketService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllersWithViews();
+builder.Services.AddResponseCompression();
 
 // Authentication
 builder.Services.AddAuthentication("MyCookieAuth")
@@ -44,7 +45,7 @@ builder.Services.AddAuthentication("MyCookieAuth")
         options.LoginPath = "/Account/Login";
         options.AccessDeniedPath = "/Account/AccessDenied";
         options.LogoutPath = "/Account/Logout";
-        options.Cookie.SecurePolicy = CookieSecurePolicy.None;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
         options.Cookie.SameSite = SameSiteMode.Lax;
     });
 
@@ -68,12 +69,11 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
+app.UseResponseCompression();
 app.UseAuthentication();
+app.UseSession(); 
 app.UseAuthorization();
-// app.UseSession(); // Uncomment if session is used in controllers
 
 // Routing
 app.MapControllerRoute(
